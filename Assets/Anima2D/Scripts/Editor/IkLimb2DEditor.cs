@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ea7986de05e2edef2d0e54cf74446fe4f0aaa7523de5c4f22bf03ea8c84d2a2d
-size 561
+﻿using UnityEngine;
+using UnityEditor;
+using System.Collections;
+
+namespace Anima2D
+{
+	[CustomEditor(typeof(IkLimb2D))]
+	public class IkLimb2DEditor : Ik2DEditor
+	{
+		override public void OnInspectorGUI()
+		{
+			base.OnInspectorGUI();
+
+			serializedObject.Update();
+			
+			SerializedProperty flipProp = serializedObject.FindProperty("flip");
+
+			EditorGUI.BeginChangeCheck();
+
+			EditorGUILayout.PropertyField(flipProp);
+
+			if(EditorGUI.EndChangeCheck())
+			{
+				EditorUpdater.SetDirty("Flip");
+			}
+
+			serializedObject.ApplyModifiedProperties();
+		}
+	}
+}

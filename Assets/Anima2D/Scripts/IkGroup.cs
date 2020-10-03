@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de52c201daaf15905c637b853155bbe546d28b2bd0abad9f23273a154e0b252f
-size 479
+﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Anima2D
+{
+	public class IkGroup : MonoBehaviour
+	{
+		[SerializeField][HideInInspector]
+		List<Ik2D> m_IkComponents = new List<Ik2D>();
+
+		public void UpdateGroup()
+		{
+			for (int i = 0; i < m_IkComponents.Count; i++)
+			{
+				Ik2D ik = m_IkComponents[i];
+
+				if(ik)
+				{
+					ik.enabled = false;
+					ik.UpdateIK();
+				}
+			}
+		}
+
+		void LateUpdate()
+		{
+			UpdateGroup();
+		}
+	}
+}

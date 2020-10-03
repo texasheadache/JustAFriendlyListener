@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:08fc090f03082daa9b0d51bd94c1de528b54efe9b31df7acbe0ee914d834e409
-size 559
+﻿// -----------------------------------------------------------------------
+// <copyright file="ISmoother.cs">
+// Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
+// </copyright>
+// -----------------------------------------------------------------------
+
+namespace TriangleNet.Smoothing
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
+    /// <summary>
+    /// Interface for mesh smoothers.
+    /// </summary>
+    public interface ISmoother
+    {
+        void Smooth();
+    }
+}

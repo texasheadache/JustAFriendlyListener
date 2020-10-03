@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3ec0bd5806442472462de2cbfe62684c30785f0ffa54a849878ec2523997e037
-size 332
+﻿using System;
+
+namespace Ink.Runtime
+{
+    internal class Tag : Runtime.Object
+    {
+        public string text { get; private set; }
+
+        public Tag (string tagText)
+        {
+            this.text = tagText;
+        }
+
+        public override string ToString ()
+        {
+            return "# " + text;
+        }
+    }
+}
+

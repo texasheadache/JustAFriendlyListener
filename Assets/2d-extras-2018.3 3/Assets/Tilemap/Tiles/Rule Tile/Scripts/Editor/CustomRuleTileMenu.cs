@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d4f51d8f1428270311569fd39c04b455229f39bcd8f4beacd1a10ce76b6dbc95
-size 678
+﻿namespace UnityEditor
+{
+    static class CustomRuleTileMenu
+    {
+        [MenuItem("Assets/Create/Custom Rule Tile Script", false, 89)]
+        static void CreateCustomRuleTile()
+        {
+            CreateScriptAsset("Assets/Tilemap/Tiles/Rule Tile/ScriptTemplates/NewCustomRuleTile.cs.txt", "NewCustomRuleTile.cs");
+        }
+
+        static void CreateScriptAsset(string templatePath, string destName)
+        {
+            typeof(ProjectWindowUtil)
+                .GetMethod("CreateScriptAsset", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic)
+                .Invoke(null, new object[] { templatePath, destName });
+        }
+    }
+}

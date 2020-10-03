@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a128d4192c2c81ded4cfad11296a1c8c565337e5905ffd22595989534a472142
-size 423
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using System;
+
+namespace Anima2D
+{
+	[Serializable]
+	public class BlendShape : ScriptableObject
+	{
+		public BlendShapeFrame[] frames = new BlendShapeFrame[0];
+		
+		public static BlendShape Create(string name)
+		{
+			BlendShape blendShape = ScriptableObject.CreateInstance<BlendShape>();
+			blendShape.name = name;
+			return blendShape;
+		}
+	}
+}

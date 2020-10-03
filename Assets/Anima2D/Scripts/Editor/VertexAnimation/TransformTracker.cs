@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b69bc9903e866ff883bbc08c72f142529fe3adeec1ca72ae060c43c534e04be
-size 609
+﻿using UnityEngine;
+using System.Collections;
+
+namespace Anima2D
+{
+	public class TransformTracker
+	{
+		Transform m_Transform;
+		Vector3 m_Position;
+		Quaternion m_Rotation;
+		Vector3 m_LocalScale;
+
+		public TransformTracker(Transform transform)
+		{
+			m_Transform = transform;
+			m_Position = m_Transform.position;
+			m_Rotation = m_Transform.rotation;
+			m_LocalScale = m_Transform.localScale;
+		}
+
+		public bool changed
+		{
+			get {
+				return !m_Transform ||
+					m_Transform.position != m_Position ||
+					m_Transform.rotation != m_Rotation ||
+					m_Transform.localScale != m_LocalScale;
+			}
+		}
+	}
+}

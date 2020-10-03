@@ -1,3 +1,49 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:377a4235e67f3b9b385dec89cc4ede7223d20d36071127fd413098c1b5e2a2e3
-size 1352
+﻿Shader "Anima2D/VisibleInsideMask"
+{
+    Properties
+    {
+        [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
+        _Color ("Tint", Color) = (1,1,1,1)
+        [MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
+        [HideInInspector] _RendererColor ("RendererColor", Color) = (1,1,1,1)
+        [HideInInspector] _Flip ("Flip", Vector) = (1,1,1,1)
+        [PerRendererData] _AlphaTex ("External Alpha", 2D) = "white" {}
+        [PerRendererData] _EnableExternalAlpha ("Enable External Alpha", Float) = 0
+    }
+
+    SubShader
+    {
+        Tags
+        {
+            "Queue"="Transparent"
+            "IgnoreProjector"="True"
+            "RenderType"="Transparent"
+            "PreviewType"="Plane"
+            "CanUseSpriteAtlas"="True"
+        }
+
+        Cull Off
+        Lighting Off
+        ZWrite Off
+        Blend One OneMinusSrcAlpha
+
+        Pass
+        {
+        	Stencil {
+                Ref 1
+                Comp LEqual
+                Pass Keep
+            }
+
+        CGPROGRAM
+            #pragma vertex SpriteVert
+            #pragma fragment SpriteFrag
+            #pragma target 2.0
+            #pragma multi_compile_instancing
+            #pragma multi_compile _ PIXELSNAP_ON
+            #pragma multi_compile _ ETC1_EXTERNAL_ALPHA
+            #include "UnitySprites.cginc"
+        ENDCG
+        }
+    }
+}

@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5e5005eb83d67943a6ee4c65495e5eff281b17bf2aee6d9605425b92bc8205ef
-size 723
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MusicPlayerSecond : MonoBehaviour
+{
+
+
+    private AudioSource mainMusic;
+    private AudioSource talkMusic;
+    // Start is called before the first frame update
+    void Start()
+    {
+        mainMusic = GameObject.Find("Sounds").GetComponent<AudioSource>();
+        talkMusic = GameObject.Find("PauseMusic").GetComponent<AudioSource>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+
+    public void HallSong1()
+    {
+        mainMusic.mute = true;
+        talkMusic.mute = false;
+    }
+
+    public void MainMusic()
+    {
+        mainMusic.mute = false;
+        talkMusic.mute = true;
+    }
+
+}

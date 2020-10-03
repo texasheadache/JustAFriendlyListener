@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:71936a738f188498a74794fa6fe8927f836ec2b35a6a1ccc458998887af5b527
-size 652
+﻿{"inkVersion":19,"root":[["^welcome to the parking lot.","\n",[{"->":"beginning"},["done",{"#f":5,"#n":"g-1"}],{"#f":5,"#n":"g-0"}],null],"done",{"beginning":[["^how may i help you?","\n","ev","str","^empty","/str","/ev",{"*":".^.c-0","flg":4},"ev","str","^weather","/str","/ev",{"*":".^.c-1","flg":4},"ev","str","^bye","/str","/ev",{"*":".^.c-2","flg":4},{"c-0":["^ it's so empty out here!","\n","^yes the event is long over","\n",{"->":".^.^.^"},{"#f":5}],"c-1":["^ it's so hot outside.","\n","^i understand it is hot outside.","\n",{"->":".^.^.^"},{"#f":5}],"c-2":["^ thankyou bye! ","end","\n","end",{"#f":5}]}],{"#f":1}],"#f":1}],"listDefs":{}}

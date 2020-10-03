@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0b67b8e29006f3fcf71df898083dddad0358be91b4c8e4f3db298b401e9e4b65
-size 483
+﻿using UnityEngine;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Anima2D
+{
+	[Serializable]
+	public struct RectManipulatorParams
+	{
+		public Vector3 position;
+		public Quaternion rotation;
+
+		public RectManipulatorParams(Vector3 _position, Quaternion _rotation)
+		{
+			position = _position;
+			rotation = _rotation;
+		}
+
+		public RectManipulatorParams(RectManipulatorParams p)
+		{
+			position = p.position;
+			rotation = p.rotation;
+		}
+	}
+}

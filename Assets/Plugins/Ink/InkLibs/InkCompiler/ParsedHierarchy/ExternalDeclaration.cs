@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b0436a414bb39f27328a7069bee4baf7853f38d415defac4305796892edb6a5d
-size 657
+﻿using System;
+using System.Collections.Generic;
+
+namespace Ink.Parsed
+{
+    internal class ExternalDeclaration : Parsed.Object, INamedContent
+    {
+        public string name { get; set; }
+        public List<string> argumentNames { get; set; }
+
+        internal ExternalDeclaration (string name, List<string> argumentNames)
+        {
+            this.name = name;
+            this.argumentNames = argumentNames;
+        }
+
+        public override Ink.Runtime.Object GenerateRuntimeObject ()
+        {
+            story.AddExternal (this);
+
+            // No runtime code exists for an external, only metadata
+            return null;
+        }
+    }
+}
+

@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:783937ebeaebbc686bd2103f83ab3179cdcdff81c5a12487ebfd4be390032680
-size 385
+using UnityEngine;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Anima2D 
+{
+	[Serializable]
+	public class Node : ScriptableObject
+	{
+		public int index = -1;
+
+		public static Node Create(int index)
+		{
+			Node node = ScriptableObject.CreateInstance<Node>();
+			node.hideFlags = HideFlags.DontSave;
+			node.index = index;
+			return node;
+		}
+	}
+}

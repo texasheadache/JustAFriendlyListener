@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4285625dcd40337ca26595dad787899552041467d7d1e7b9d1c1a7be2ef8ad47
-size 282
+﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Anima2D
+{
+	public interface IVertexManipulable
+	{
+		int GetManipulableVertexCount();
+		Vector3 GetManipulableVertex(int index);
+		void SetManipulatedVertex(int index, Vector3 vertex);
+	}
+}

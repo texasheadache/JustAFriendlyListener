@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:525410bc1c17e96f99a1c28ea3741f52dadf89112ad53575c861951d71d9ff49
-size 863
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class RespawnOnExit1 : MonoBehaviour
+{
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "friendly")
+        {
+            BoxCollider2D box = gameObject.GetComponent<BoxCollider2D>();
+            Vector2 pos = new Vector2(0f, Random.Range(box.bounds.min.y, box.bounds.max.y));
+            
+            Debug.Log(collision.gameObject.GetComponent<FriendlyMovementSideways>());
+            if (collision.gameObject.GetComponent<FriendlyMovementSideways>().randomSpeed < 0f)
+            {
+                pos.x = box.bounds.min.x;
+            }
+            else
+            {
+                pos.x = box.bounds.max.x; 
+            }
+            
+            collision.gameObject.transform.position = pos; 
+        }
+    }
+}

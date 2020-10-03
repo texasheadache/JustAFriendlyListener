@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c8237570af8a2078d25195d336d4258e0067df4169563e50eb03fb3fa814439d
-size 709
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class clampCam : MonoBehaviour
+{
+    [SerializeField] Transform followTransform;
+
+
+  //  Transform t;
+
+    private void Awake()
+    {
+     //   t = transform; 
+    }
+
+
+    private void FixedUpdate()
+    {
+        transform.position = new Vector3(
+            Mathf.Clamp(followTransform.position.x, -4f, 5f),
+            Mathf.Clamp(followTransform.position.y, 1f, -6f),
+            transform.position.z);
+    }
+
+    /*
+    private void LateUpdate()
+    {
+        this.transform.position = new Vector3(followTransform.position.x,
+                  followTransform.position.y, this.transform.position.z);
+    }
+    */
+}

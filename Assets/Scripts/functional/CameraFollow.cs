@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:399df2a11c88846749aececd6fdadb399b2c0ccc32e24336249716331d3478c8
-size 478
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraFollow : MonoBehaviour
+{
+
+    public Transform followTransform;
+    public float minx;
+    public float maxx;
+    public float miny;
+    public float maxy; 
+
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        this.transform.position = new Vector3(followTransform.position.x,
+            followTransform.position.y, this.transform.position.z);
+    }
+}

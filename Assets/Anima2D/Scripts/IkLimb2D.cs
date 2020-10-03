@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:90c460858b0bc572c177e70a83743dfc7e4e85c2c23e82e189fb53cf39291635
-size 561
+﻿using UnityEngine;
+using System.Collections;
+
+namespace Anima2D
+{
+	public class IkLimb2D : Ik2D
+	{
+		public bool flip = false;
+
+		[SerializeField] IkSolver2DLimb m_Solver = new IkSolver2DLimb();
+		
+		protected override IkSolver2D GetSolver()
+		{
+			return m_Solver;
+		}
+
+		protected override void Validate()
+		{
+			numBones = 2;
+		}
+
+		protected override int ValidateNumBones(int numBones)
+		{
+			return 2;
+		}
+
+		protected override void OnIkUpdate()
+		{
+			base.OnIkUpdate();
+
+			m_Solver.flip = flip;
+		}
+
+		void OnValidate()
+		{
+			numBones = 2;
+		}
+	}
+}

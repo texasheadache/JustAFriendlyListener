@@ -1,3 +1,58 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a5f8b7b03d227b3984cf00b146265e4bc3681d3cf384a6ba973ca92559543014
-size 882
+﻿using UnityEngine;
+using System.Collections;
+
+namespace Anima2D
+{
+	public class Control : MonoBehaviour
+	{
+		[SerializeField]
+		Transform m_BoneTransform;
+
+		public Color color {
+			get {
+				if(m_CachedBone)
+				{
+					Color color = m_CachedBone.color;
+					color.a = 1f;
+					return color;
+				}
+
+				return Color.white;
+			}
+		}
+
+		Bone2D m_CachedBone;
+		public Bone2D bone {
+			get {
+				if(m_CachedBone && m_BoneTransform != m_CachedBone.transform)
+				{
+					m_CachedBone = null;
+				}
+				
+				if(!m_CachedBone && m_BoneTransform)
+				{
+					m_CachedBone = m_BoneTransform.GetComponent<Bone2D>();
+				}
+
+				return m_CachedBone;
+			}
+			set {
+				m_BoneTransform = value.transform;
+			}
+		}
+
+		void Start()
+		{
+
+		}
+
+		void LateUpdate()
+		{
+			if(bone)
+			{
+				transform.position = bone.transform.position;
+				transform.rotation = bone.transform.rotation;
+			}
+		}
+	}
+}

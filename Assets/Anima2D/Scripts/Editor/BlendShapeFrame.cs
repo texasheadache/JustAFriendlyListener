@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5ede961cc09fa31ebaabaf5d938b6e79fb3e3205a16622e2daa1cc380d4c2156
-size 479
+﻿using UnityEngine;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Anima2D
+{
+	[Serializable]
+	public class BlendShapeFrame : ScriptableObject
+	{
+		public float weight;
+		public Vector3[] vertices;
+
+		public static BlendShapeFrame Create(float weight, Vector3[] vertices)
+		{
+			BlendShapeFrame frame = ScriptableObject.CreateInstance<BlendShapeFrame>();
+
+			frame.vertices = vertices;
+
+			frame.weight = weight;
+
+			return frame;
+		}
+	}
+}

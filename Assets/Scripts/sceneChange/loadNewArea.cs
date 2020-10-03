@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f90c7d4fbf863c6c60bef1238bd0ebe6b6d022be3a6a929df8c846ef3ee9c298
-size 897
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class loadNewArea : MonoBehaviour
+{
+
+    public bool playerInRange;
+    public string levelToLoad;
+
+    public string exitPoint;
+
+    private PlayerMovement thePlayer;  
+    // Start is called before the first frame update
+    void Start()
+    {
+        thePlayer = FindObjectOfType<PlayerMovement>();
+        playerInRange = false; 
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
+        {
+            SceneManager.LoadScene(levelToLoad, LoadSceneMode.Single);
+            thePlayer.startPoint = exitPoint; 
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = true;
+        }
+    }
+
+
+}

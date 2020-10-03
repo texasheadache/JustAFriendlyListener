@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e030a951759238447fc44f0a45f8dcfbc7525c1ed79a3ac44ba71d49c8f6523d
-size 1118
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class wavingFriend : MonoBehaviour
+{
+    //public AnimationClip clipName;
+    public float reachDistance;
+    private GameObject Player;
+    public GameObject Target;
+    public Animator animator;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+        Player = GameObject.Find("Player1Player");
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        reachDistance = Vector3.Distance(Player.transform.position, Target.transform.position);
+        if (reachDistance < 1.0f && CompSongPlayer.talkOn == false)
+        {
+            animator.SetBool("closeEnough", true);
+            animator.SetBool("startedWaving", true);
+        }
+        else if (reachDistance < 1.0f && CompSongPlayer.talkOn == true)
+        { 
+            animator.SetBool("closeEnough", false);
+            animator.SetBool("startedWaving", false);
+        }
+        else
+        {
+            animator.SetBool("closeEnough", false);
+            animator.SetBool("startedWaving", false);
+        }
+      
+    }
+}

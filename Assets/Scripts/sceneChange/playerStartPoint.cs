@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b3704c09038d74aec7bb7c003c5d62899ad0879f30f80881e0526d955266a12d
-size 920
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class playerStartPoint : MonoBehaviour
+{
+
+    private PlayerMovement thePlayer;
+    private cameraDontDestroy theCamera;
+    public Vector2 startDirection;
+
+    public string pointName; 
+
+   // public Vector2 startDirection;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        thePlayer = FindObjectOfType<PlayerMovement>();
+
+        if (thePlayer.startPoint == pointName)
+        {
+            thePlayer.transform.position = transform.position;
+            thePlayer.lastMove = startDirection;
+
+            // theCamera = FindObjectOfType<cameraDontDestroy>();
+            //  theCamera.transform.position = new Vector3(transform.position.x, transform.position.y, theCamera.transform.position.z);
+        }
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

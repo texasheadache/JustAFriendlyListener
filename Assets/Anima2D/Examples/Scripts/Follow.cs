@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fdf2ec5635f10b52b555ab6b298dba4eff8fede4f331ff58a4c974db0a9b24bd
-size 256
+﻿using UnityEngine;
+using System.Collections;
+
+[ExecuteInEditMode]
+public class Follow : MonoBehaviour
+{
+	public Transform target;
+	public Vector3 offset;
+
+	void LateUpdate()
+	{
+		if(target)
+		{
+			transform.position = target.position + offset;
+		}
+	}
+}

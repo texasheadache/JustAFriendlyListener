@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:552305c7040544c36b2d64dc4e8f595b1d6b04b66fe1a81b30531e489b971cb1
-size 270
+welcome to the parking lot. 
+
+- 
+-> beginning
+
+== beginning == 
+how may i help you?
+
++[empty] it's so empty out here!
+yes the event is long over 
+->beginning
++[weather] it's so hot outside.
+i understand it is hot outside. 
+->beginning
++[bye] thankyou bye! ->END
+
+->END
+

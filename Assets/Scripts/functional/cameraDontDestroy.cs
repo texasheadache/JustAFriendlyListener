@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1b87d74ab1804f2cb6005c05cd640fe2dd0efcd56f9d8cc3ebb1de4def5af98a
-size 586
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class cameraDontDestroy : MonoBehaviour
+{
+
+    private static bool cameraExists;
+    // Start is called before the first frame update
+    void Start()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+
+
+        if (!cameraExists)
+        {
+            cameraExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
+

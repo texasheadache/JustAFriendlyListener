@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:51cd0bde6290d720c57d9327c5a15b1fda961b92b306305a906ab7b918fe6c1f
-size 258
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!62 &6200000
+PhysicsMaterial2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Slippery2
+  friction: 0.2
+  bounciness: 0

@@ -1,3 +1,49 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a5c14e496f8d2d87d5426a02d1cfa74e485e22d229faa66be74d54baa03c97b1
-size 959
+﻿using UnityEngine;
+using UnityEditor;
+using System;
+using System.Collections;
+
+namespace Anima2D
+{
+	[Serializable]
+	public class Edge : ScriptableObject
+	{
+		public Node node1;
+		public Node node2;
+
+		public static Edge Create(Node vertex1, Node vertex2)
+		{
+			Edge edge = ScriptableObject.CreateInstance<Edge>();
+			edge.hideFlags = HideFlags.DontSave;
+			edge.node1 = vertex1;
+			edge.node2 = vertex2;
+			
+			return edge;
+		}
+
+		public bool ContainsNode(Node node)
+		{
+			return node1 == node || node2 == node;
+		}
+
+		public override bool Equals(System.Object obj) 
+		{
+			if (obj == null || GetType() != obj.GetType()) 
+				return false;
+			
+			Edge p = (Edge)obj;
+			
+			return (node1 == p.node1) && (node2 == p.node2) || (node1 == p.node2) && (node2 == p.node1);
+		}
+		
+		public override int GetHashCode() 
+		{
+			return node1.GetHashCode() ^ node2.GetHashCode();
+		}
+
+		public static implicit operator bool(Edge e)
+		{
+			return e != null;
+		}
+	}
+}

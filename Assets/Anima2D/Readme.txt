@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:53e5176381274efb89760723c18de200b4c9356effda7bf828e7ff3498e7963f
-size 149
+For documentation and tutorial videos go to anima2d.com, or check out the user guide in the same folder as this file.
+
+Enjoy the Anima2D experience!!

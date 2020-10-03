@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2735e393cbe36bb1cf79c3793eaafdcea856d82550f563fef23ca5e83636aca1
-size 489
+﻿using UnityEngine;
+using UnityEditor;
+using System.Collections;
+
+public interface IAnimationWindowImpl
+{
+	EditorWindow animationWindow { get; }
+	int frame { get; set; }
+	bool recording { get; set; }
+	AnimationClip activeAnimationClip { get; }
+	GameObject activeGameObject { get; }
+	GameObject rootGameObject { get; }
+	int refresh { get; }
+	float currentTime { get; }
+	bool playing { get; }
+
+	void InitializeReflection();
+	float FrameToTime(int frame);
+	float TimeToFrame(float time);
+}

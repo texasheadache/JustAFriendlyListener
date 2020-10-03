@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:63d8970da821c4bb39702b0855f497296974f798ed3d8b23b6aeb0f7efc199a4
-size 584
+﻿// -----------------------------------------------------------------------
+// <copyright file="ITriangulator.cs" company="">
+// Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
+// </copyright>
+// -----------------------------------------------------------------------
+
+namespace TriangleNet.Algorithm
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
+    /// <summary>
+    /// TODO: Update summary.
+    /// </summary>
+    public interface ITriangulator
+    {
+        int Triangulate(Mesh mesh);
+    }
+}

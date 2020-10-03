@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5e0e6f7f5ceaa35a1a7fc4bcb59886e9acf8ad82b45528a4bed45e392129ddc2
-size 891
+﻿// -----------------------------------------------------------------------
+// <copyright file="IGeometryFormat.cs" company="">
+// Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
+// </copyright>
+// -----------------------------------------------------------------------
+
+namespace TriangleNet.IO
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using TriangleNet.Geometry;
+
+    /// <summary>
+    /// Interface for geometry input.
+    /// </summary>
+    public interface IGeometryFormat
+    {
+        /// <summary>
+        /// Read a file containing geometry information.
+        /// </summary>
+        /// <param name="filename">The path of the file to read.</param>
+        /// <returns>An instance of the <see cref="InputGeometry" /> class.</returns>
+        InputGeometry Read(string filename);
+    }
+}

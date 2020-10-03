@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:21605946aa127a1e13283861d7fbfc541847ccb43ac2a1c70115a21fb5d9d892
-size 388
+﻿using UnityEngine;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Anima2D
+{
+	public class Pose : ScriptableObject
+	{
+		[Serializable]
+		public class PoseEntry
+		{
+			public string path;
+			public Vector3 localPosition;
+			public Quaternion localRotation;
+			public Vector3 localScale;
+		}
+
+		[SerializeField]
+		List<PoseEntry> m_PoseEntries;
+	}
+}

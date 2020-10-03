@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a88c0737a9ff2abe83c4cb473131ee6c0e07854194d07b1b4524cd81d1d88cc1
-size 388
+﻿using UnityEngine;
+using System;
+using System.Collections;
+
+namespace Anima2D 
+{
+	[Serializable]
+	public class Hole : ICloneable
+	{
+		public Vector2 vertex = Vector2.zero;
+
+		public Hole(Vector2 vertex)
+		{
+			this.vertex = vertex;
+		}
+
+		public object Clone()
+		{
+			return this.MemberwiseClone();
+		}
+
+		public static implicit operator bool(Hole h)
+		{
+			return h != null;
+		}
+	}
+}

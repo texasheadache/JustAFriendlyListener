@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:18386679e20952acc595f9a7297f9709dd85e6888de896093ca2687afc6f069d
-size 460
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DestroyFriend : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("wall"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
+
+}

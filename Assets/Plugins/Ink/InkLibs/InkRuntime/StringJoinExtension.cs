@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2cd5d7e74929e18bb483bd368e6109e81c67ca4af12b888baa8915af94a39cb0
-size 557
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Ink.Runtime
+{
+    internal static class StringExt
+    {
+        public static string Join<T>(string separator, List<T> objects)
+        {
+            var sb = new StringBuilder ();
+
+            var isFirst = true;
+            foreach (var o in objects) {
+
+                if (!isFirst)
+                    sb.Append (separator);
+
+                sb.Append (o.ToString ());
+
+                isFirst = false;
+            }
+
+            return sb.ToString ();
+        }
+    }
+}
+

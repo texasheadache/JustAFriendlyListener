@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f46ecee30624af3883854e94b622e6d4f153ec5497b8b2722e727527afea7fd2
-size 672
+﻿using UnityEngine;
+using System.Collections;
+
+[ExecuteInEditMode]
+[RequireComponent(typeof(SpriteCycle))]
+public class SpriteCycleParallax : MonoBehaviour
+{
+	public Transform target;
+	public Vector2 factor;
+
+	SpriteCycle spriteCicle;
+	
+	void Awake()
+	{
+		spriteCicle = GetComponent<SpriteCycle>();
+	}
+
+	void Start()
+	{
+		if(!target)
+		{
+			if(Camera.main)
+			{
+				target = Camera.main.transform;
+			}
+		}
+	}
+
+	void Update()
+	{
+		if(target && spriteCicle)
+		{
+			spriteCicle.position = target.position.x*factor.x;
+
+			Vector3 localPosition = transform.localPosition;
+			localPosition.y = target.position.y*factor.y;
+			transform.localPosition = localPosition;
+		}
+	}
+}

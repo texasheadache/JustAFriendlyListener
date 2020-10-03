@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3c93a766fff5736c0b0989d5c143a1ce01c38545f5b2dd60cb17b0b732c8d8b2
-size 426
+﻿using System;
+
+namespace UnityEngine
+{
+    public class IsometricRuleTile<T> : IsometricRuleTile
+    {
+        public sealed override Type m_NeighborType { get { return typeof(T); } }
+    }
+
+    [Serializable]
+    [CreateAssetMenu(fileName = "New Isometric Rule Tile", menuName = "Tiles/Isometric Rule Tile")]
+    public class IsometricRuleTile : RuleTile
+    {
+        // This has no differences with the RuleTile
+    }
+}

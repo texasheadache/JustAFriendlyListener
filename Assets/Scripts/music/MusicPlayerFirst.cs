@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9c40a02c16c267379955db40f6292071a8905f6d34c766559d9eec73f9efd8b9
-size 619
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MusicPlayerFirst : MonoBehaviour
+{
+
+
+    [SerializeField] AudioSource mainMusic;
+    [SerializeField] AudioSource talkMusic;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+
+    public void ChangeMusicToSong()
+    {
+        mainMusic.mute = true;
+        talkMusic.mute = false;
+    }
+
+    public void ChangeMusicToMain()
+    {
+        mainMusic.mute = false;
+        talkMusic.mute = true;
+    }
+
+}

@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fe8bf173eb79423d887c1fd87224acca7a1065b3dcd422009dc47a579290d022
-size 386
+﻿using UnityEngine;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Anima2D
+{
+	public class RectManipulatorData : IRectManipulatorData
+	{
+		List<Vector3> m_NormalizedVertices = new List<Vector3>();
+
+		public List<Vector3> normalizedVertices {
+			get {
+				return m_NormalizedVertices;
+			}
+			set {
+				m_NormalizedVertices = value;
+			}
+		}
+	}
+}

@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e78825937c34c3469943e71ebfd365d45410948a91b4a69ab5f51ffee138820b
-size 891
+﻿// -----------------------------------------------------------------------
+// <copyright file="ILog.cs" company="">
+// Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
+// </copyright>
+// -----------------------------------------------------------------------
+
+namespace TriangleNet.Log
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
+    public enum LogLevel
+    {
+        Info = 0,
+        Warning = 1,
+        Error = 2
+    }
+
+    /// <summary>
+    /// A basic log interface.
+    /// </summary>
+    public interface ILog<T> where T : ILogItem
+    {
+        void Add(T item);
+        void Clear();
+
+        void Info(string message);
+        void Error(string message, string info);
+        void Warning(string message, string info);
+
+        IList<T> Data { get; }
+
+        LogLevel Level { get; }
+    }
+}

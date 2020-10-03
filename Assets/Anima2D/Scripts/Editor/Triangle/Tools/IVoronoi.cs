@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:54ee16081115adb4a4f42fe5c2b02a428668026f9c52f24bbf549cfc9345ddf4
-size 763
+﻿// -----------------------------------------------------------------------
+// <copyright file="IVoronoi.cs" company="">
+// Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
+// </copyright>
+// -----------------------------------------------------------------------
+
+namespace TriangleNet.Tools
+{
+    using System.Collections.Generic;
+    using TriangleNet.Geometry;
+
+    /// <summary>
+    /// TODO: Update summary.
+    /// </summary>
+    public interface IVoronoi
+    {
+        /// <summary>
+        /// Gets the list of Voronoi vertices.
+        /// </summary>
+        Point[] Points { get; }
+
+        /// <summary>
+        /// Gets the list of Voronoi regions.
+        /// </summary>
+        List<VoronoiRegion> Regions { get; }
+    }
+}

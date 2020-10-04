@@ -65,3 +65,6 @@ TagManager:
   - name: Streetlight
     uniqueID: 1853095521
     locked: 0
+  - name: desktop
+    uniqueID: 3323471337
+    locked: 0

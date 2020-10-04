@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Quit : MonoBehaviour
 {
@@ -9,8 +10,11 @@ public class Quit : MonoBehaviour
    
     public void OnButtonPress()
     {
-        Debug.Log("quitting"); 
-        Application.Quit();
+        // Debug.Log("quitting"); 
+        // Application.Quit();
+        SceneManager.LoadScene("Menu");
+
+
     }
 
 }

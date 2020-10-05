@@ -7761,6 +7761,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8306817813299825561, guid: 640b154d3a20f497eabca3b172bdfa5a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8306817813299825566, guid: 640b154d3a20f497eabca3b172bdfa5a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11310,7 +11315,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 0.9
+  orthographic size: 2
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -11320,7 +11325,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1

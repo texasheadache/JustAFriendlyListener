@@ -12,7 +12,7 @@ public class MusicPlayerSecond : MonoBehaviour
     void Start()
     {
         mainMusic = GameObject.Find("Sounds").GetComponent<AudioSource>();
-        talkMusic = GameObject.Find("PauseMusic").GetComponent<AudioSource>();
+        talkMusic = GameObject.Find("strangerNoise1").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

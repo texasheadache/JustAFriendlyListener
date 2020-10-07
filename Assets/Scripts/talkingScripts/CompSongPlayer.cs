@@ -99,6 +99,7 @@ public class CompSongPlayer : MonoBehaviour
                 StartFriendsSideways2();
                 StartFriendsAnim();
                 StartFriendsAnim2();
+                GameObject.Find("GeneralMusicStuff").GetComponent<MusicSlider1>().closeSlider2();
             }
         }
     }

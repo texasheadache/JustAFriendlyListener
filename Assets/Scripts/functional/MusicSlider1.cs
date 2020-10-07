@@ -11,6 +11,7 @@ public class MusicSlider1 : MonoBehaviour
     private AudioSource mainMusic;
     private AudioSource CompSong1;
     [SerializeField] Slider Story1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,10 +76,14 @@ public class MusicSlider1 : MonoBehaviour
         Story1MusicSpeed.SetActive(false);
     }
 
+
+    /*
     //optional function to reset settings on slider after conversation
     public void resetSlider2()
     {
         CompSong1.pitch = 1;
         Story1.value = 1f;
     }
+    */
+
 }

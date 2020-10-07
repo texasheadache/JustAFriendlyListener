@@ -6,17 +6,18 @@ using UnityEngine.UI;
 public class MusicSlider1 : MonoBehaviour
 {
 
-    private GameObject MusicSlider;
-    private GameObject MusicSlider2; 
+    private GameObject HallMusicSpeed;
+    private GameObject Story1MusicSpeed; 
     private AudioSource mainMusic;
-    private AudioSource CompSong1; 
+    private AudioSource CompSong1;
+    [SerializeField] Slider Story1;
     // Start is called before the first frame update
     void Start()
     {
-        MusicSlider = GameObject.Find("MusicSliderPanel");
-        MusicSlider2 = GameObject.Find("MusicSliderPanel2");
-        MusicSlider.SetActive(false);
-        MusicSlider2.SetActive(false);
+        HallMusicSpeed = GameObject.Find("HallMusicSpeed");
+        Story1MusicSpeed = GameObject.Find("Story1MusicSpeed");
+        HallMusicSpeed.SetActive(false);
+        Story1MusicSpeed.SetActive(false);
 
         mainMusic = GameObject.Find("Sounds").GetComponent<AudioSource>();
         CompSong1 = GameObject.Find("CompSong1").GetComponent<AudioSource>();
@@ -31,22 +32,22 @@ public class MusicSlider1 : MonoBehaviour
             if (!mainMusic.mute)
             {
 
-                if (!MusicSlider.activeInHierarchy)
+                if (!HallMusicSpeed.activeInHierarchy)
                 {
                     showSlider();
                 }
-                else if (MusicSlider.activeInHierarchy)
+                else if (HallMusicSpeed.activeInHierarchy)
                 {
                     closeSlider();
                 }
             }
             else if (!CompSong1.mute)
             {
-                if (!MusicSlider2.activeInHierarchy)
+                if (!Story1MusicSpeed.activeInHierarchy)
                 {
                     showSlider2();
                 }
-                else if (MusicSlider2.activeInHierarchy)
+                else if (Story1MusicSpeed.activeInHierarchy)
                 {
                     closeSlider2();
                 }
@@ -56,22 +57,28 @@ public class MusicSlider1 : MonoBehaviour
 
     public void showSlider()
     {
-        MusicSlider.SetActive(true); 
+        HallMusicSpeed.SetActive(true); 
     }
 
     public void closeSlider()
     {
-        MusicSlider.SetActive(false);
+        HallMusicSpeed.SetActive(false);
     }
 
     public void showSlider2()
     {
-        MusicSlider2.SetActive(true);
+        Story1MusicSpeed.SetActive(true);
     }
 
     public void closeSlider2()
     {
-        MusicSlider2.SetActive(false);
-        CompSong1.pitch = 1; 
+        Story1MusicSpeed.SetActive(false);
+    }
+
+    //optional function to reset settings on slider after conversation
+    public void resetSlider2()
+    {
+        CompSong1.pitch = 1;
+        Story1.value = 1f;
     }
 }

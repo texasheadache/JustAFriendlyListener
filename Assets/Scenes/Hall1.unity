@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 66695783}
   - component: {fileID: 66695784}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Story1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2367,7 +2367,7 @@ GameObject:
   - component: {fileID: 351306850}
   - component: {fileID: 351306849}
   m_Layer: 5
-  m_Name: Music Speed (1)
+  m_Name: Story1MusicSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2445,8 +2445,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1829581750}
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 1152118332}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5685,7 +5685,7 @@ GameObject:
   - component: {fileID: 788523445}
   - component: {fileID: 788523444}
   m_Layer: 5
-  m_Name: Music Speed
+  m_Name: HallMusicSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5763,8 +5763,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 869661516}
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_Father: {fileID: 1152118332}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6341,7 +6341,7 @@ GameObject:
   - component: {fileID: 869661518}
   - component: {fileID: 869661517}
   m_Layer: 5
-  m_Name: MusicSliderPanel
+  m_Name: HallMusicSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8115,6 +8115,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1152118331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1152118332}
+  m_Layer: 0
+  m_Name: Sliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1152118332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152118331}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.963402, y: -3.6346197, z: -0.930184}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 788523447}
+  - {fileID: 351306852}
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1158879295
 GameObject:
   m_ObjectHideFlags: 0
@@ -10046,6 +10078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bf3aa6a5ae643eb920fa3e644e21f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Story1: {fileID: 66695784}
 --- !u!1 &1501970521
 GameObject:
   m_ObjectHideFlags: 0
@@ -12073,7 +12106,7 @@ GameObject:
   - component: {fileID: 1825837904}
   - component: {fileID: 1825837905}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: HallMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12301,7 +12334,7 @@ GameObject:
   - component: {fileID: 1829581752}
   - component: {fileID: 1829581751}
   m_Layer: 5
-  m_Name: MusicSliderPanel2
+  m_Name: Story1MusicSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

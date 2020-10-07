@@ -9,16 +9,13 @@ public class Pause : MonoBehaviour
     [SerializeField] public GameObject optionsPanel;
     [SerializeField] AudioSource playMusic;
     [SerializeField] AudioSource playPauseMusic;
-   // private AudioSource playPauseMusic; 
     [SerializeField] AudioSource playCompMusic;
     private GameObject player; 
-   // [SerializeField] GameObject player; 
 
     void Start()
     {
         //pausePanel.SetActive(false);
         player = GameObject.Find("Player1Player");
-        playPauseMusic = GameObject.Find("MainMenuMusic").GetComponent<AudioSource>();
         Debug.Log("FoundIt");
     }
 

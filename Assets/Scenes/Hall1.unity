@@ -3649,27 +3649,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMusic: {fileID: 321029696}
   talkMusic: {fileID: 1982455161}
---- !u!114 &590750504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 590750502}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adcb0bf3aae034621af0ed7a0a81aab6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 0
-  isWalking: 0
-  walkTime: 0
-  waitTime: 0
-  waitCounter: 0
-  walkZone: {fileID: 0}
-  isStationary: 0
-  hasPath: 0
-  wayPoints: []
 --- !u!114 &590750505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9441,12 +9420,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 640b154d3a20f497eabca3b172bdfa5a, type: 3}
---- !u!1 &1386345906 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8306817813299825561, guid: 640b154d3a20f497eabca3b172bdfa5a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1386345905}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1428027715
 GameObject:
   m_ObjectHideFlags: 0
@@ -9707,7 +9680,6 @@ MonoBehaviour:
   playMusic: {fileID: 321029696}
   playPauseMusic: {fileID: 1858412492}
   playCompMusic: {fileID: 0}
-  player: {fileID: 1386345906}
 --- !u!4 &1487452759
 Transform:
   m_ObjectHideFlags: 0
@@ -10686,7 +10658,6 @@ GameObject:
   - component: {fileID: 1728022898}
   - component: {fileID: 1728022897}
   - component: {fileID: 1728022896}
-  - component: {fileID: 1728022895}
   - component: {fileID: 1728022894}
   - component: {fileID: 1728022893}
   - component: {fileID: 1728022892}
@@ -10766,27 +10737,6 @@ MonoBehaviour:
   reachDistance: 0.5
   Target: {fileID: 1728022889}
   animator: {fileID: 0}
---- !u!114 &1728022895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1728022889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adcb0bf3aae034621af0ed7a0a81aab6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 0
-  isWalking: 0
-  walkTime: 0
-  waitTime: 0
-  waitCounter: 0
-  walkZone: {fileID: 0}
-  isStationary: 1
-  hasPath: 0
-  wayPoints: []
 --- !u!114 &1728022896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11364,7 +11314,6 @@ GameObject:
   - component: {fileID: 1816696453}
   - component: {fileID: 1816696452}
   - component: {fileID: 1816696451}
-  - component: {fileID: 1816696450}
   - component: {fileID: 1816696449}
   - component: {fileID: 1816696448}
   - component: {fileID: 1816696447}
@@ -11446,27 +11395,6 @@ MonoBehaviour:
   reachDistance: 0.5
   Target: {fileID: 1816696445}
   animator: {fileID: 0}
---- !u!114 &1816696450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1816696445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adcb0bf3aae034621af0ed7a0a81aab6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 0
-  isWalking: 0
-  walkTime: 0
-  waitTime: 0
-  waitCounter: 0
-  walkZone: {fileID: 0}
-  isStationary: 1
-  hasPath: 0
-  wayPoints: []
 --- !u!114 &1816696451
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -28,8 +28,11 @@ public class TalkingFriend : MonoBehaviour
                // delay = Time.time + 0.5f; 
                 if (talkBox.activeInHierarchy)
                 {
-                    //isTalk = true; 
-                    GameObject.FindObjectOfType<FriendlyMovement>().StopForConvo();
+                    //isTalk = true;
+                    if (this.GetComponent<FriendlyMovement>() != null)
+                    {
+                        GameObject.FindObjectOfType<FriendlyMovement>().StopForConvo();
+                    }
                     StopFriendsSideways();
                     StopFriendsSideways2();
                     talkBox.SetActive(true);
@@ -209,7 +212,10 @@ public class TalkingFriend : MonoBehaviour
             talkBox.GetComponent<InkScript>().eraseUI();
             talkBox.GetComponent<InkScript>().refreshStory();
             talkBox.GetComponent<InkScript>().HidePanels();
-            GameObject.FindObjectOfType<FriendlyMovement>().LeaveConvo();
+            if (this.GetComponent<FriendlyMovement>() != null)
+            {
+                GameObject.FindObjectOfType<FriendlyMovement>().LeaveConvo();
+            }
             Debug.Log("leftConvo");
             StartFriends();
             StartFriendsSideways();

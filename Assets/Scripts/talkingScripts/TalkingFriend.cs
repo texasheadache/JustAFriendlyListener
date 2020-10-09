@@ -37,7 +37,9 @@ public class TalkingFriend : MonoBehaviour
                     StopFriendsSideways2();
                     talkBox.SetActive(true);
                     talkBox.GetComponent<InkScript>().ShowPanels();
+                    Debug.Log("PanelShown");
                     talkBox.GetComponent<InkScript>().refreshUI();
+                    Debug.Log("RefreshedUI");
                     StopFriends();
                  //   this.GetComponent<MusicPlayerFirst>().ChangeMusicToSong();
                     StopFriendsAnim();
@@ -51,6 +53,7 @@ public class TalkingFriend : MonoBehaviour
                     StartFriendsSideways2();
                     talkBox.SetActive(false);
                     talkBox.GetComponent<InkScript>().HidePanels();
+                    Debug.Log("PanelHidden");
                     StartFriends();
                    // this.GetComponent<MusicPlayerFirst>().ChangeMusicToMain();
                     StartFriendsAnim();

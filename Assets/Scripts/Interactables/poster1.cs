@@ -36,11 +36,8 @@ public class poster1 : MonoBehaviour
                 poster.enabled = false;
                 isImageOn = false;
                 unPaused();
-                 
-                
             }
         }
-       
     }
 
     private void OnTriggerEnter2D(Collider2D other)

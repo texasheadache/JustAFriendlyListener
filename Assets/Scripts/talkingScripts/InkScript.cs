@@ -39,8 +39,10 @@ public class InkScript : MonoBehaviour
 
     public void refreshUI()
     {
-
+       
         eraseUI();
+
+        
 
         Text storyText = Instantiate(textPrefab) as Text;
 

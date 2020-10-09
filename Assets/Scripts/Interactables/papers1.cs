@@ -97,5 +97,4 @@ public class papers1 : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().UnFreeze();
     }
-
 }

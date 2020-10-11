@@ -4273,6 +4273,11 @@ MonoBehaviour:
   paper2: {fileID: 1132157838}
   paper3: {fileID: 756168450}
   paper4: {fileID: 1915226956}
+  papers:
+  - {fileID: 1455172376}
+  - {fileID: 1132157838}
+  - {fileID: 756168450}
+  - {fileID: 1915226956}
 --- !u!61 &1344370982
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4809,7 +4814,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 78e94f618f1684e7283d24b24cef6a0b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.458
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -2,28 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class papers1 : MonoBehaviour
 {
     public bool playerInRange;
     public bool isImageOn;
-    public Image paper;
-    public Image paper2;
-    public Image paper3;
-    public Image paper4; 
     private GameObject player;
+    int papersPages; 
+
+    [SerializeField] Image[] papers;
 
     // Start is called before the first frame update
     void Start()
     {
-        paper.enabled = false;
-        paper2.enabled = false;
-        paper3.enabled = false;
-        paper4.enabled = false; 
+        papersPages = 0; 
         isImageOn = false;
         player = GameObject.Find("Player1Player");
         playerInRange = false;
-
     }
 
     // Update is called once per frame
@@ -33,41 +29,42 @@ public class papers1 : MonoBehaviour
         {
             if (isImageOn == false)
             {
-                paper.enabled = true;
-                paper2.enabled = true;
+                papers[0].enabled = true;
                 isImageOn = true;
                 paused();
             }
             else
             {
-                paper.enabled = false;
-                paper2.enabled = false;
-                paper3.enabled = false;
-                paper4.enabled = false; 
+                papers[papersPages].enabled = false;
                 isImageOn = false;
                 unPaused();
+                papersPages = 0; 
             }
         }
 
-        if(isImageOn == true)
-        {
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (isImageOn == true)
             {
-                paper.enabled = false; 
-                paper2.enabled = false;
-                paper3.enabled = true;
-                paper4.enabled = true; 
+                if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    if (papersPages < papers.Length - 1)
+                    {
+                        papersPages++;
+                        papers[papersPages].enabled = true;
+                        papers[papersPages - 1].enabled = false; 
+                    }
+                }
             }
-        }
 
         if (isImageOn == true)
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                paper.enabled = true;
-                paper2.enabled = true;
-                paper3.enabled = false;
-                paper4.enabled = false;
+                if (papersPages > 0)
+                {
+                    papersPages--;
+                    papers[papersPages].enabled = true;
+                    papers[papersPages + 1].enabled = false;
+                }
             }
         }
     }

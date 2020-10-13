@@ -7913,6 +7913,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InkyFriend1
       objectReference: {fileID: 0}
+    - target: {fileID: 6871294858472935209, guid: bdb3ba3133e1a41ba98676ed38f7754c,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6871294858472935214, guid: bdb3ba3133e1a41ba98676ed38f7754c,
         type: 3}
       propertyPath: m_LocalPosition.x

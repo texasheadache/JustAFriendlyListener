@@ -10,13 +10,12 @@ public class loadNewArea : MonoBehaviour
     public string levelToLoad;
 
     public string exitPoint;
-
     private PlayerMovement thePlayer;  
     // Start is called before the first frame update
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerMovement>();
-        playerInRange = false; 
+        playerInRange = false;
     }
 
     // Update is called once per frame

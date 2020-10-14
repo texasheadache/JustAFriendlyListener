@@ -10,9 +10,12 @@ public class loadNewArea : MonoBehaviour
     public bool playerInRange;
     public string levelToLoad;
 
-    public smallLoader sl; 
+    public smallLoader sl;
+    public smallLoader2 sl2; 
     public string exitPoint;
     private PlayerMovement thePlayer;
+
+    public int num; 
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,7 @@ public class loadNewArea : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
         {
             sl.loading();
+           // sl2.coinFlip();
             SceneManager.LoadScene(levelToLoad, LoadSceneMode.Single);
             thePlayer.startPoint = exitPoint; 
         }
@@ -38,7 +42,9 @@ public class loadNewArea : MonoBehaviour
         {
             playerInRange = true;
         }
+
     }
 
+ 
 
 }

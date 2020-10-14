@@ -20,8 +20,6 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-
-        
         if (!playerExists)
         {
             playerExists = true;
@@ -31,10 +29,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
-
-
-
     }
 
     void Update()
@@ -50,19 +44,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-    
     public void OnCollisionStay2D(Collision2D collision)
     {
         if(collision.collider.tag == "friendly")
         {
             myRigidbody.isKinematic = true;
         }
-       
     }
 
-    
-    
     public void OnCollisionExit2D(Collision2D collision)
     {
         if(collision.collider.tag == "friendly")
@@ -70,9 +59,6 @@ public class PlayerMovement : MonoBehaviour
                 myRigidbody.isKinematic = false;
         }
     }
-
-    
-
 
     void UpdateAnimationAndMove()
     {
@@ -88,8 +74,6 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("moving", false);
         }
     }
-
-    
 
     void MoveCharacter()
     {

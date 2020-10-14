@@ -20,4 +20,8 @@ public class smallLoader : MonoBehaviour
         canvas.gameObject.SetActive(true);
     }
 
+    public void unLoading()
+    {
+        canvas.gameObject.SetActive(false);
+    }
 }

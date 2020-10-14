@@ -1167,7 +1167,6 @@ MonoBehaviour:
   playMusic: {fileID: 0}
   playPauseMusic: {fileID: 0}
   playCompMusic: {fileID: 0}
-  player: {fileID: 0}
 --- !u!4 &1622237633
 Transform:
   m_ObjectHideFlags: 0

@@ -5,12 +5,13 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
-public class LevelLoader : MonoBehaviour
+public class LevelLoader2 : MonoBehaviour
 {
 
     [SerializeField] private Text progressText;
     [SerializeField] private Slider slider;
-
+    //public loadNewArea loadNewArea;
+    public string levelToLoad;
 
     private AsyncOperation operation;
     private Canvas canvas;
@@ -18,25 +19,27 @@ public class LevelLoader : MonoBehaviour
     private void Awake()
     {
         canvas = GetComponentInChildren<Canvas>(true);
-      //  DontDestroyOnLoad(gameObject); 
+        DontDestroyOnLoad(gameObject);
+        loadNewArea loadNewArea = gameObject.GetComponent<loadNewArea>();
+        levelToLoad = loadNewArea.levelToLoad;
     }
 
-    public void LoadScene(string sceneName)
+    public void LoadScene(string levelToLoad)
     {
         UpdateProgressUI(0);
         canvas.gameObject.SetActive(true);
 
-        StartCoroutine(BeginLoad(sceneName));
+        StartCoroutine(BeginLoad(levelToLoad));
     }
 
-    private IEnumerator BeginLoad(string sceneName)
+    private IEnumerator BeginLoad(string levelToLoad)
     {
-        operation = SceneManager.LoadSceneAsync(sceneName);
+        operation = SceneManager.LoadSceneAsync(levelToLoad);
 
         while (!operation.isDone)
         {
             UpdateProgressUI(operation.progress);
-            yield return null; 
+            yield return null;
         }
 
         UpdateProgressUI(operation.progress);

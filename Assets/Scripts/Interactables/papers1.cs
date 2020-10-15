@@ -9,7 +9,8 @@ public class papers1 : MonoBehaviour
     public bool playerInRange;
     public bool isImageOn;
     private GameObject player;
-    int papersPages; 
+    int papersPages;
+    public MusicSlider1 ms1;
 
     [SerializeField] Image[] papers;
 
@@ -29,16 +30,27 @@ public class papers1 : MonoBehaviour
         {
             if (isImageOn == false)
             {
+                if (this.GetComponent<MusicPlayerFirst>() != null)
+                {
+                    this.GetComponent<MusicPlayerFirst>().ChangeMusicToSong();
+                }
                 papers[0].enabled = true;
                 isImageOn = true;
                 paused();
+                ms1.closeSlider();
             }
             else
             {
+                if (this.GetComponent<MusicPlayerFirst>() != null)
+                {
+                    this.GetComponent<MusicPlayerFirst>().ChangeMusicToMain();
+                }
                 papers[papersPages].enabled = false;
                 isImageOn = false;
                 unPaused();
-                papersPages = 0; 
+                papersPages = 0;
+                GameObject.Find("GeneralMusicStuff").GetComponent<MusicSlider1>().closeSlider2();
+
             }
         }
 

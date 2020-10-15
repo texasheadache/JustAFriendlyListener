@@ -6,22 +6,35 @@ using UnityEngine.UI;
 public class MusicSlider1 : MonoBehaviour
 {
 
-    private GameObject HallMusicSpeed;
-    private GameObject Story1MusicSpeed; 
-    private AudioSource mainMusic;
-    private AudioSource CompSong1;
+    // private GameObject HallMusicSpeed;
+    //image for slider for main song (first child of canvas holding slider)
+    [SerializeField] GameObject MainMusicSpeed;
+
+    // private GameObject Story1MusicSpeed;
+    //image for slider for first "song" in scene (first child of canvas holding slider - image file?)
+    [SerializeField] GameObject Story1MusicSpeed;
+
+    // private AudioSource mainMusic;
+    // audiosource of the main music for scen
+    [SerializeField] AudioSource mainMusic;
+
+    //audiosource of the first "song" in scene
+    // private AudioSource CompSong1;
+    [SerializeField] AudioSource Story1Music; 
+
+    // slider for the first "song" in scene
     [SerializeField] Slider Story1;
 
     // Start is called before the first frame update
     void Start()
     {
-        HallMusicSpeed = GameObject.Find("HallMusicSpeed");
-        Story1MusicSpeed = GameObject.Find("Story1MusicSpeed");
-        HallMusicSpeed.SetActive(false);
+       // HallMusicSpeed = GameObject.Find("HallMusicSpeed");
+       // Story1MusicSpeed = GameObject.Find("Story1MusicSpeed");
+        MainMusicSpeed.SetActive(false);
         Story1MusicSpeed.SetActive(false);
 
-        mainMusic = GameObject.Find("Sounds").GetComponent<AudioSource>();
-        CompSong1 = GameObject.Find("CompSong1").GetComponent<AudioSource>();
+      //  mainMusic = GameObject.Find("Sounds").GetComponent<AudioSource>();
+      //  CompSong1 = GameObject.Find("CompSong1").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,16 +46,16 @@ public class MusicSlider1 : MonoBehaviour
             if (!mainMusic.mute)
             {
 
-                if (!HallMusicSpeed.activeInHierarchy)
+                if (!MainMusicSpeed.activeInHierarchy)
                 {
                     showSlider();
                 }
-                else if (HallMusicSpeed.activeInHierarchy)
+                else if (MainMusicSpeed.activeInHierarchy)
                 {
                     closeSlider();
                 }
             }
-            else if (!CompSong1.mute)
+            else if (!Story1Music.mute)
             {
                 if (!Story1MusicSpeed.activeInHierarchy)
                 {
@@ -58,12 +71,12 @@ public class MusicSlider1 : MonoBehaviour
 
     public void showSlider()
     {
-        HallMusicSpeed.SetActive(true); 
+        MainMusicSpeed.SetActive(true); 
     }
 
     public void closeSlider()
     {
-        HallMusicSpeed.SetActive(false);
+        MainMusicSpeed.SetActive(false);
     }
 
     public void showSlider2()

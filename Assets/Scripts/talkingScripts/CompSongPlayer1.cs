@@ -13,7 +13,7 @@ public class CompSongPlayer1 : MonoBehaviour
     public InkScript inkScript;
     private GameObject[] friends;
     public Animator animator;
-
+    public MusicSlider1 ms1; 
 
 
     void Start()
@@ -53,6 +53,7 @@ public class CompSongPlayer1 : MonoBehaviour
                 StopFriendsSideways2();
                 StopFriendsAnim();
                 StopFriendsAnim2();
+                ms1.closeSlider();
             }
 
             else if (Input.GetKeyDown(KeyCode.Space) && inkScript.continuing)

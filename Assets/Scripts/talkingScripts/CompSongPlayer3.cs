@@ -16,8 +16,6 @@ public class CompSongPlayer3 : MonoBehaviour
     private GameObject[] friends;
     private Animator animator;
 
-
-
     void Start()
     {
         talkBox = GameObject.Find("HallFriendTalks");
@@ -26,6 +24,7 @@ public class CompSongPlayer3 : MonoBehaviour
         inkScript = GameObject.Find("HallFriendTalks").GetComponent<InkScript>();
         friends = GameObject.FindGameObjectsWithTag("friendly");
         animator = GetComponent<Animator>();
+
     }
 
     // WORKING VERSION OF THIS SCRIPT WITH FINAL FUNCTIONALITY

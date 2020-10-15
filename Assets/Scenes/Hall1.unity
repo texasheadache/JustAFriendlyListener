@@ -4438,6 +4438,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lockerfriend3
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a7a83c9191ae64e37aa90a7bf9ef416a, type: 3}
+      propertyPath: m_TagString
+      value: frontFriends
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a7a83c9191ae64e37aa90a7bf9ef416a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.41
@@ -11715,7 +11719,7 @@ GameObject:
   - component: {fileID: 1371304209}
   m_Layer: 0
   m_Name: Stickman1 (2)
-  m_TagString: Untagged
+  m_TagString: frontFriends
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11776,6 +11780,7 @@ MonoBehaviour:
   playerInRange: 0
   inkScript: {fileID: 1392364636}
   animator: {fileID: 0}
+  ms1: {fileID: 1487452760}
 --- !u!114 &1371304210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12584,6 +12589,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bf3aa6a5ae643eb920fa3e644e21f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainMusicSpeed: {fileID: 869661515}
+  Story1MusicSpeed: {fileID: 1829581749}
+  mainMusic: {fileID: 321029696}
+  Story1Music: {fileID: 650117716}
   Story1: {fileID: 66695784}
 --- !u!1 &1501970521
 GameObject:
@@ -12663,6 +12672,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5551c7853dcec48a086c5eac06679a1e, type: 3}
       propertyPath: m_Name
       value: lockerfriend2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5551c7853dcec48a086c5eac06679a1e, type: 3}
+      propertyPath: m_TagString
+      value: frontFriends
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5551c7853dcec48a086c5eac06679a1e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13977,7 +13990,7 @@ GameObject:
   - component: {fileID: 1728022892}
   m_Layer: 0
   m_Name: Stickman1 (1)
-  m_TagString: Untagged
+  m_TagString: frontFriends
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14761,7 +14774,7 @@ GameObject:
   - component: {fileID: 1816696447}
   m_Layer: 0
   m_Name: Stickman1
-  m_TagString: Untagged
+  m_TagString: frontFriends
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -10,6 +10,7 @@ TagManager:
   - wall
   - friend1left
   - CinemachineConfiner1
+  - frontFriends
   layers:
   - Default
   - TransparentFX

@@ -14,16 +14,24 @@ public class MusicSlider1 : MonoBehaviour
     //image for slider for first "song" in scene (first child of canvas holding slider - image file?)
     [SerializeField] GameObject Story1MusicSpeed;
 
+    //image for slider for dream1
+    [SerializeField] GameObject dream1MusicSpeed;
+
     // private AudioSource mainMusic;
     // audiosource of the main music for scen
     [SerializeField] AudioSource mainMusic;
 
     //audiosource of the first "song" in scene
     // private AudioSource CompSong1;
-    [SerializeField] AudioSource Story1Music; 
+    [SerializeField] AudioSource Story1Music;
+
+    //audiosource for dream1 song
+    [SerializeField] AudioSource dream1Music;
 
     // slider for the first "song" in scene
     [SerializeField] Slider Story1;
+
+   // [SerializeField] Slider dream1; 
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +40,7 @@ public class MusicSlider1 : MonoBehaviour
        // Story1MusicSpeed = GameObject.Find("Story1MusicSpeed");
         MainMusicSpeed.SetActive(false);
         Story1MusicSpeed.SetActive(false);
+        dream1MusicSpeed.SetActive(false);
 
       //  mainMusic = GameObject.Find("Sounds").GetComponent<AudioSource>();
       //  CompSong1 = GameObject.Find("CompSong1").GetComponent<AudioSource>();
@@ -60,12 +69,30 @@ public class MusicSlider1 : MonoBehaviour
                 if (!Story1MusicSpeed.activeInHierarchy)
                 {
                     showSlider2();
+                    Debug.Log("open Stor1");
                 }
                 else if (Story1MusicSpeed.activeInHierarchy)
                 {
                     closeSlider2();
+                    Debug.Log("closeStor1");
                 }
             }
+
+            
+            /*
+             else if (!dream1Music.mute)
+            {
+                if (!dream1MusicSpeed.activeInHierarchy)
+                {
+                    showSlider2();
+                }
+                else if (dream1MusicSpeed.activeInHierarchy)
+                {
+                    closeSlider2();
+                }
+            }
+            */
+            
         }
     }
 
@@ -81,14 +108,30 @@ public class MusicSlider1 : MonoBehaviour
 
     public void showSlider2()
     {
-        Story1MusicSpeed.SetActive(true);
+      
+            Story1MusicSpeed.SetActive(true);
+            Debug.Log("openS1");
     }
 
     public void closeSlider2()
     {
-        Story1MusicSpeed.SetActive(false);
+            Story1MusicSpeed.SetActive(false);
+            Debug.Log("closeSto1");
     }
 
+    /*
+    public void showSlider3()
+    {
+        dream1MusicSpeed.SetActive(true);
+        Debug.Log("open");
+    }
+
+    public void closeSlider3()
+    {
+        dream1MusicSpeed.SetActive(false);
+        Debug.Log("closed");
+    }
+    */
 
     /*
     //optional function to reset settings on slider after conversation

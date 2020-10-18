@@ -12,6 +12,7 @@ public class papers1 : MonoBehaviour
     int papersPages;
     public MusicSlider1 ms1;
 
+
     [SerializeField] Image[] papers;
 
     // Start is called before the first frame update
@@ -21,6 +22,8 @@ public class papers1 : MonoBehaviour
         isImageOn = false;
         player = GameObject.Find("Player1Player");
         playerInRange = false;
+
+
     }
 
     // Update is called once per frame

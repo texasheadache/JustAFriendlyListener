@@ -52,7 +52,8 @@ public class papers1 : MonoBehaviour
                 isImageOn = false;
                 unPaused();
                 papersPages = 0;
-                GameObject.Find("GeneralMusicStuff").GetComponent<MusicSlider1>().closeSlider2();
+                // GameObject.Find("GeneralMusicStuff").GetComponent<MusicSlider1>().closeSlider2();
+                ms1.closeSlider2();
 
             }
         }

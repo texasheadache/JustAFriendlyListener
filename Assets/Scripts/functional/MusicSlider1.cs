@@ -64,6 +64,8 @@ public class MusicSlider1 : MonoBehaviour
                     closeSlider();
                 }
             }
+
+            /*
             else if (!Story1Music.mute)
             {
                 if (!Story1MusicSpeed.activeInHierarchy)
@@ -77,7 +79,14 @@ public class MusicSlider1 : MonoBehaviour
                     Debug.Log("closeStor1");
                 }
             }
+            */
 
+            
+            else
+            {
+                showSlider2();
+            }
+            
             
             /*
              else if (!dream1Music.mute)
@@ -106,6 +115,59 @@ public class MusicSlider1 : MonoBehaviour
         MainMusicSpeed.SetActive(false);
     }
 
+
+    public void showSlider2()
+    {
+        if (!Story1Music.mute)
+        {
+            if (!Story1MusicSpeed.activeInHierarchy)
+            {
+                Story1MusicSpeed.SetActive(true);
+                Debug.Log("open Stor1");
+            }
+            else if (Story1MusicSpeed.activeInHierarchy)
+            {
+                Story1MusicSpeed.SetActive(false);
+                Debug.Log("closeStor1");
+            }
+        }
+
+        else if (!dream1Music.mute)
+        {
+            if (!dream1MusicSpeed.activeInHierarchy)
+            {
+                dream1MusicSpeed.SetActive(true);
+                Debug.Log("dreamOn");
+            }
+            else if (dream1MusicSpeed.activeInHierarchy)
+            {
+                dream1MusicSpeed.SetActive(false);
+                Debug.Log("dreamOff");
+            }
+        }
+    }
+
+    public void closeSlider2()
+    {
+        if (Story1MusicSpeed.activeInHierarchy)
+        {
+            Story1MusicSpeed.SetActive(false);
+            Debug.Log("closeSto1");
+        }
+
+        else if (dream1MusicSpeed.activeInHierarchy)
+        {
+            dream1MusicSpeed.SetActive(false);
+            Debug.Log("closeDreamies");
+        }
+    }
+
+
+
+
+
+
+    /*
     public void showSlider2()
     {
       
@@ -118,20 +180,11 @@ public class MusicSlider1 : MonoBehaviour
             Story1MusicSpeed.SetActive(false);
             Debug.Log("closeSto1");
     }
-
-    /*
-    public void showSlider3()
-    {
-        dream1MusicSpeed.SetActive(true);
-        Debug.Log("open");
-    }
-
-    public void closeSlider3()
-    {
-        dream1MusicSpeed.SetActive(false);
-        Debug.Log("closed");
-    }
     */
+
+
+
+
 
     /*
     //optional function to reset settings on slider after conversation

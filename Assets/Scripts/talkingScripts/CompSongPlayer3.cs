@@ -8,14 +8,12 @@ public class CompSongPlayer3 : MonoBehaviour
 {
 
     private GameObject talkBox;
-    private GameObject talkBox2;
 
     public bool playerInRange;
     private AudioSource playMusic;
     private AudioSource playCompSong1;
     public static bool talkOn = false;
     private InkScript inkScript;
-    private InkScript inkScript2; 
     private GameObject[] friends;
     private Animator animator;
 
@@ -24,13 +22,11 @@ public class CompSongPlayer3 : MonoBehaviour
     void Start()
     {
         talkBox = GameObject.Find("HallFriendTalks");
-        talkBox2 = GameObject.Find("HallFriendTalks2");
 
         playMusic = GameObject.Find("Sounds").GetComponent<AudioSource>();
         playCompSong1 = GameObject.Find("OldSong").GetComponent<AudioSource>();
 
         inkScript = GameObject.Find("HallFriendTalks").GetComponent<InkScript>();
-        inkScript2 = GameObject.Find("HallFriendTalks2").GetComponent<InkScript>();
 
         friends = GameObject.FindGameObjectsWithTag("friendly");
         animator = GetComponent<Animator>();
@@ -43,6 +39,7 @@ public class CompSongPlayer3 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
 
         {
+
             if (talkOn == false)
             {
                 talkBox.GetComponent<InkScript>().ShowPanels();
@@ -269,25 +266,6 @@ public class CompSongPlayer3 : MonoBehaviour
             {
                friends.GetComponent<FriendlyMovementSideways2>().LeaveConvo();
             }
-        }
-    }
-
-
-    public void coinFlip()
-    {
-        num = Random.Range(1, 3);
-
-        if (num == 1)
-        {
-            Debug.Log(num + "1");
-        }
-        else if (num == 2)
-        {
-            Debug.Log(num + "2");
-        }
-        else if(num == 3)
-        {
-            Debug.Log(num + "3");
         }
     }
 

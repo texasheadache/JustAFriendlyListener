@@ -11,7 +11,6 @@ public class loadNewArea : MonoBehaviour
     public string levelToLoad;
 
     public smallLoader sl;
-    public smallLoader2 sl2; 
     public string exitPoint;
     private PlayerMovement thePlayer;
 
@@ -30,7 +29,6 @@ public class loadNewArea : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
         {
             sl.loading();
-           // sl2.coinFlip();
             SceneManager.LoadScene(levelToLoad, LoadSceneMode.Single);
             thePlayer.startPoint = exitPoint; 
         }

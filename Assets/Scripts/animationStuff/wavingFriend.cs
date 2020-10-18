@@ -21,6 +21,7 @@ public class wavingFriend : MonoBehaviour
     void Update()
     {
         reachDistance = Vector3.Distance(Player.transform.position, Target.transform.position);
+
         if (reachDistance < 1.0f && CompSongPlayer.talkOn == false)
         {
             animator.SetBool("closeEnough", true);

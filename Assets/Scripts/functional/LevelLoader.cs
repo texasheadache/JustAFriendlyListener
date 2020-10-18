@@ -23,11 +23,29 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        UpdateProgressUI(0);
+       // UpdateProgressUI(0);
         canvas.gameObject.SetActive(true);
 
         StartCoroutine(BeginLoad(sceneName));
     }
+
+
+    private IEnumerator BeginLoad(string sceneName)
+    {
+        operation = SceneManager.LoadSceneAsync(sceneName);
+
+        while (!operation.isDone)
+        {
+          //  UpdateProgressUI(operation.progress);
+            yield return null;
+        }
+
+       // UpdateProgressUI(operation.progress);
+        operation = null;
+        canvas.gameObject.SetActive(false);
+    }
+
+    /*
 
     private IEnumerator BeginLoad(string sceneName)
     {
@@ -48,6 +66,6 @@ public class LevelLoader : MonoBehaviour
     {
         slider.value = progress;
         progressText.text = (int)(progress * 100f) + "%";
-    }
+    }*/
 
 }

@@ -3958,7 +3958,7 @@ GameObject:
   - component: {fileID: 951852531}
   - component: {fileID: 951852530}
   m_Layer: 5
-  m_Name: MusicSliderPanel
+  m_Name: MainMusicSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4049,14 +4049,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bf3aa6a5ae643eb920fa3e644e21f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMusicSpeed: {fileID: 951852528}
-  Story1MusicSpeed: {fileID: 2106012877}
-  dream1MusicSpeed: {fileID: 1282611395}
+  mainMusicSpeed: {fileID: 951852528}
+  oneMusicSpeed: {fileID: 2106012877}
+  twoMusicSpeed: {fileID: 1282611395}
   mainMusic: {fileID: 1737689713}
-  Story1Music: {fileID: 171858450}
-  dream1Music: {fileID: 1159597072}
+  oneMusic: {fileID: 171858450}
+  twoMusic: {fileID: 1159597072}
   Story1: {fileID: 430834123}
-  dream1: {fileID: 26025746}
 --- !u!114 &966029437
 MonoBehaviour:
   m_ObjectHideFlags: 0

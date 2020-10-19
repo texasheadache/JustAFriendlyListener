@@ -2581,7 +2581,7 @@ GameObject:
   - component: {fileID: 351306850}
   - component: {fileID: 351306849}
   m_Layer: 5
-  m_Name: Story1MusicSpeed
+  m_Name: OneMusicSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6433,7 +6433,7 @@ GameObject:
   - component: {fileID: 788523445}
   - component: {fileID: 788523444}
   m_Layer: 5
-  m_Name: HallMusicSpeed
+  m_Name: MainMusicSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9827,7 +9827,7 @@ GameObject:
   - component: {fileID: 1197903868}
   - component: {fileID: 1197903867}
   m_Layer: 5
-  m_Name: Dream1Slider
+  m_Name: TwoMusicSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12011,12 +12011,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bf3aa6a5ae643eb920fa3e644e21f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMusicSpeed: {fileID: 869661515}
-  Story1MusicSpeed: {fileID: 1829581749}
-  dream1MusicSpeed: {fileID: 0}
+  mainMusicSpeed: {fileID: 869661515}
+  oneMusicSpeed: {fileID: 1829581749}
+  twoMusicSpeed: {fileID: 1197903865}
   mainMusic: {fileID: 321029696}
-  Story1Music: {fileID: 650117716}
-  dream1Music: {fileID: 0}
+  oneMusic: {fileID: 650117716}
+  twoMusic: {fileID: 1982455161}
   Story1: {fileID: 66695784}
 --- !u!1 &1501970521
 GameObject:

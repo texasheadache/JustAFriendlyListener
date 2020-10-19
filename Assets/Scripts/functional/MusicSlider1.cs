@@ -6,44 +6,31 @@ using UnityEngine.UI;
 public class MusicSlider1 : MonoBehaviour
 {
 
-    // private GameObject HallMusicSpeed;
     //image for slider for main song (first child of canvas holding slider)
-    [SerializeField] GameObject MainMusicSpeed;
+    [SerializeField] GameObject mainMusicSpeed;
 
-    // private GameObject Story1MusicSpeed;
     //image for slider for first "song" in scene (first child of canvas holding slider - image file?)
-    [SerializeField] GameObject Story1MusicSpeed;
+    [SerializeField] GameObject oneMusicSpeed;
 
     //image for slider for dream1
-    [SerializeField] GameObject dream1MusicSpeed;
+    [SerializeField] GameObject twoMusicSpeed;
 
-    // private AudioSource mainMusic;
-    // audiosource of the main music for scen
+    // audiosource of the main music for scene
     [SerializeField] AudioSource mainMusic;
-
+    
     //audiosource of the first "song" in scene
     // private AudioSource CompSong1;
-    [SerializeField] AudioSource Story1Music;
+    [SerializeField] AudioSource oneMusic;
 
-    //audiosource for dream1 song
-    [SerializeField] AudioSource dream1Music;
-
-    // slider for the first "song" in scene
-    [SerializeField] Slider Story1;
-
-   // [SerializeField] Slider dream1; 
+    //audiosource for second "song" in scene
+    [SerializeField] AudioSource twoMusic;
 
     // Start is called before the first frame update
     void Start()
     {
-       // HallMusicSpeed = GameObject.Find("HallMusicSpeed");
-       // Story1MusicSpeed = GameObject.Find("Story1MusicSpeed");
-        MainMusicSpeed.SetActive(false);
-        Story1MusicSpeed.SetActive(false);
-        dream1MusicSpeed.SetActive(false);
-
-      //  mainMusic = GameObject.Find("Sounds").GetComponent<AudioSource>();
-      //  CompSong1 = GameObject.Find("CompSong1").GetComponent<AudioSource>();
+        mainMusicSpeed.SetActive(false);
+        oneMusicSpeed.SetActive(false);
+        twoMusicSpeed.SetActive(false);
     }
 
     // Update is called once per frame
@@ -55,11 +42,11 @@ public class MusicSlider1 : MonoBehaviour
             if (!mainMusic.mute)
             {
 
-                if (!MainMusicSpeed.activeInHierarchy)
+                if (!mainMusicSpeed.activeInHierarchy)
                 {
                     showSlider();
                 }
-                else if (MainMusicSpeed.activeInHierarchy)
+                else if (mainMusicSpeed.activeInHierarchy)
                 {
                     closeSlider();
                 }
@@ -107,41 +94,41 @@ public class MusicSlider1 : MonoBehaviour
 
     public void showSlider()
     {
-        MainMusicSpeed.SetActive(true); 
+        mainMusicSpeed.SetActive(true); 
     }
 
     public void closeSlider()
     {
-        MainMusicSpeed.SetActive(false);
+        mainMusicSpeed.SetActive(false);
     }
 
 
     public void showSlider2()
     {
-        if (!Story1Music.mute)
+        if (!oneMusic.mute)
         {
-            if (!Story1MusicSpeed.activeInHierarchy)
+            if (!oneMusicSpeed.activeInHierarchy)
             {
-                Story1MusicSpeed.SetActive(true);
+                oneMusicSpeed.SetActive(true);
                 Debug.Log("open Stor1");
             }
-            else if (Story1MusicSpeed.activeInHierarchy)
+            else if (oneMusicSpeed.activeInHierarchy)
             {
-                Story1MusicSpeed.SetActive(false);
+                oneMusicSpeed.SetActive(false);
                 Debug.Log("closeStor1");
             }
         }
 
-        else if (!dream1Music.mute)
+        else if (!twoMusic.mute)
         {
-            if (!dream1MusicSpeed.activeInHierarchy)
+            if (!twoMusicSpeed.activeInHierarchy)
             {
-                dream1MusicSpeed.SetActive(true);
+                twoMusicSpeed.SetActive(true);
                 Debug.Log("dreamOn");
             }
-            else if (dream1MusicSpeed.activeInHierarchy)
+            else if (twoMusicSpeed.activeInHierarchy)
             {
-                dream1MusicSpeed.SetActive(false);
+                twoMusicSpeed.SetActive(false);
                 Debug.Log("dreamOff");
             }
         }
@@ -149,15 +136,15 @@ public class MusicSlider1 : MonoBehaviour
 
     public void closeSlider2()
     {
-        if (Story1MusicSpeed.activeInHierarchy)
+        if (oneMusicSpeed.activeInHierarchy)
         {
-            Story1MusicSpeed.SetActive(false);
+            oneMusicSpeed.SetActive(false);
             Debug.Log("closeSto1");
         }
 
-        else if (dream1MusicSpeed.activeInHierarchy)
+        else if (twoMusicSpeed.activeInHierarchy)
         {
-            dream1MusicSpeed.SetActive(false);
+            twoMusicSpeed.SetActive(false);
             Debug.Log("closeDreamies");
         }
     }

@@ -8154,6 +8154,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6871294858472935210, guid: bdb3ba3133e1a41ba98676ed38f7754c,
+        type: 3}
+      propertyPath: talkingFriend
+      value: 
+      objectReference: {fileID: 1728022893}
     - target: {fileID: 6871294858472935214, guid: bdb3ba3133e1a41ba98676ed38f7754c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12418,6 +12423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talkBox: {fileID: 0}
   playerInRange: 0
+  inkScript: {fileID: 0}
 --- !u!95 &1562475122
 Animator:
   serializedVersion: 3
@@ -12552,6 +12558,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1045730724}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1577697665 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6871294858472935210, guid: bdb3ba3133e1a41ba98676ed38f7754c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1045730724}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577697664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67032ab8f151240458f8d77e1f05cc0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1592457193
 GameObject:
   m_ObjectHideFlags: 0
@@ -13395,7 +13413,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728022889}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a73b66bb58384a548954f0e1a197abb, type: 3}
   m_Name: 
@@ -13423,13 +13441,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728022889}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9fe6b66e7c6d4a3d82a015c8c1aed5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   talkBox: {fileID: 1577697664}
   playerInRange: 0
+  inkScript: {fileID: 1577697665}
 --- !u!114 &1728022894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13522,7 +13541,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0312743, y: -1.1899309}
+  m_Offset: {x: -0.6302519, y: -0.15872812}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -13533,7 +13552,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0625486, y: 4.0779552}
+  m_Size: {x: 2.2605038, y: 2.0155497}
   m_EdgeRadius: 0
 --- !u!50 &1728022900
 Rigidbody2D:

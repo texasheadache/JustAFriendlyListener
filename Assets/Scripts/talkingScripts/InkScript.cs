@@ -17,7 +17,7 @@ public class InkScript : MonoBehaviour
     public Button buttonPrefab;
     List<string> tags;
     public bool continuing = false;
-    private EventSystem es; 
+    private EventSystem es;
 
 
     // Start is called before the first frame update
@@ -141,7 +141,6 @@ public class InkScript : MonoBehaviour
         else if (story.currentChoices.Count > 0)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Freeze();
-             
         }
 
         else

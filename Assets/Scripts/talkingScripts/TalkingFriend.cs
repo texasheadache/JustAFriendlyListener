@@ -9,8 +9,10 @@ public class TalkingFriend : MonoBehaviour
     public GameObject talkBox;
     public bool playerInRange;
     private GameObject[] friends;
-   // public float delay; 
-   // public FriendlyMovement movingFriends;
+    // public float delay; 
+    // public FriendlyMovement movingFriends;
+
+    public InkScript inkScript;
 
     void Start()
     {
@@ -25,8 +27,11 @@ public class TalkingFriend : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
             {
-               // delay = Time.time + 0.5f; 
-                if (talkBox.activeInHierarchy)
+               // delay = Time.time + 0.5f;
+               
+               // if (talkBox.activeInHierarchy)
+               
+              if(inkScript.story.canContinue == true || inkScript.story.currentChoices.Count > 0)
                 {
                     //isTalk = true;
                     if (this.GetComponent<FriendlyMovement>() != null)
@@ -45,9 +50,12 @@ public class TalkingFriend : MonoBehaviour
                     StopFriendsAnim();
                     StopFriendsAnim2();
                 }
-                else
+                else 
                 {
-                    GameObject.FindObjectOfType<FriendlyMovement>().LeaveConvo();
+                    if (this.GetComponent<FriendlyMovement>() != null)
+                    {
+                        GameObject.FindObjectOfType<FriendlyMovement>().LeaveConvo();
+                    }
                     Debug.Log("leftConvo at weird part");
                     StartFriendsSideways();
                     StartFriendsSideways2();

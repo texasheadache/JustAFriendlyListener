@@ -37,6 +37,7 @@ public class InkScript : MonoBehaviour
         story = new Story(inkJSON.text);
     }
 
+
     public void refreshUI()
     {
 
@@ -145,7 +146,10 @@ public class InkScript : MonoBehaviour
 
         else
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().UnFreeze();
+            //i unfreeze the character elsewhere in other scripts related to the interaction now
+            //but i'm keeping this here just in case i need a reminder/for posterity
+            // GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().UnFreeze();
+            Debug.Log("unfreezed");
         }
 
         return text;

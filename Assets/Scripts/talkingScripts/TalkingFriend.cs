@@ -46,7 +46,7 @@ public class TalkingFriend : MonoBehaviour
                     talkBox.GetComponent<InkScript>().refreshUI();
                     Debug.Log("RefreshedUI");
                     StopFriends();
-                 //   this.GetComponent<MusicPlayerFirst>().ChangeMusicToSong();
+                    this.GetComponent<MusicPlayerFirst>().ChangeMusicToSong();
                     StopFriendsAnim();
                     StopFriendsAnim2();
                 }
@@ -63,9 +63,10 @@ public class TalkingFriend : MonoBehaviour
                     talkBox.GetComponent<InkScript>().HidePanels();
                     Debug.Log("PanelHidden");
                     StartFriends();
-                   // this.GetComponent<MusicPlayerFirst>().ChangeMusicToMain();
+                    this.GetComponent<MusicPlayerFirst>().ChangeMusicToMain();
                     StartFriendsAnim();
                     StartFriendsAnim2();
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().UnFreeze();
                 }
             }
         }
@@ -231,7 +232,7 @@ public class TalkingFriend : MonoBehaviour
             StartFriends();
             StartFriendsSideways();
             StartFriendsSideways2();
-          //  this.GetComponent<MusicPlayerFirst>().ChangeMusicToMain();
+            this.GetComponent<MusicPlayerFirst>().ChangeMusicToMain();
             StartFriendsAnim();
             StartFriendsAnim2();
         }

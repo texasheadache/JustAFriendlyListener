@@ -8149,6 +8149,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InkyFriend1
       objectReference: {fileID: 0}
+    - target: {fileID: 6871294858472931541, guid: bdb3ba3133e1a41ba98676ed38f7754c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6871294858472935214, guid: bdb3ba3133e1a41ba98676ed38f7754c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12017,7 +12022,6 @@ MonoBehaviour:
   mainMusic: {fileID: 321029696}
   oneMusic: {fileID: 650117716}
   twoMusic: {fileID: 1982455161}
-  Story1: {fileID: 66695784}
 --- !u!1 &1501970521
 GameObject:
   m_ObjectHideFlags: 0
@@ -13350,6 +13354,7 @@ GameObject:
   - component: {fileID: 1728022894}
   - component: {fileID: 1728022893}
   - component: {fileID: 1728022892}
+  - component: {fileID: 1728022891}
   m_Layer: 0
   m_Name: Stickman1 (1)
   m_TagString: frontFriends
@@ -13383,6 +13388,20 @@ Transform:
   m_Father: {fileID: 1010694589}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1728022891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728022889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a73b66bb58384a548954f0e1a197abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talkBox: {fileID: 1577697664}
+  playerInRange: 0
 --- !u!114 &1728022892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13404,7 +13423,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728022889}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9fe6b66e7c6d4a3d82a015c8c1aed5c, type: 3}
   m_Name: 

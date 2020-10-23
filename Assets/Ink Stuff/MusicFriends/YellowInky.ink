@@ -12,7 +12,7 @@ yes the event is long over
 +[weather] it's so hot outside.
 i understand it is hot outside. 
 ->beginning
-+[bye] thankyou bye! ->END
-
++[bye] thankyou bye! 
 ->END
+
 

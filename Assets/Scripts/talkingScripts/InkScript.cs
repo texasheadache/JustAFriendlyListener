@@ -39,25 +39,19 @@ public class InkScript : MonoBehaviour
 
     public void refreshUI()
     {
-       
-        eraseUI();
 
-        
+        if (story.currentChoices.Count < 1)
+        {
+            eraseUI();
+        }
 
+        if(story.canContinue == true)
+      { 
         Text storyText = Instantiate(textPrefab) as Text;
 
         string text = loadStoryChunk();
 
         List<string> tags = story.currentTags;
-
-        //to add bold font to tags as per the tutorial
-        /*
-        if(tags.Count > 0)
-        {
-            text = "<b>" + tags[0] + "</b>" + " - " + text;
-
-        }
-        */
 
         storyText.text = text;
         storyText.transform.SetParent(dialogPanel.transform, true);
@@ -75,12 +69,21 @@ public class InkScript : MonoBehaviour
                 chooseStoryChoice(choice);
             });
         }
+
+      }
+
+        if (story.canContinue == false)
+        {
+            loadStoryChunk();
+        }
     }
+
 
     internal bool canContinue(bool v)
     {
         throw new NotImplementedException();
     }
+
 
     public void eraseUI()
     {
@@ -105,6 +108,7 @@ public class InkScript : MonoBehaviour
         }
     }
 
+
     void chooseStoryChoice(Choice choice)
     {
         story.ChooseChoiceIndex(choice.index);
@@ -117,10 +121,12 @@ public class InkScript : MonoBehaviour
         dialogPanel.SetActive(false);
     }
 
+
     public void ShowPanels()
     {
         dialogPanel.SetActive(true);
     }
+
 
     string loadStoryChunk()
     {
@@ -141,9 +147,7 @@ public class InkScript : MonoBehaviour
         else
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().UnFreeze();
-
         }
-
 
         return text;
     }
@@ -160,25 +164,4 @@ public class InkScript : MonoBehaviour
             continuing = false; 
         }
     }
-
-    /*
-     *
-     * trying to move text prefab with the tags in ink.....not working well.
-         List<string> tags = story.currentTags;
-
-            if (tags.Contains("rock"))
-            {
-                textPrefab.alignment = TextAnchor.LowerRight;
-
-            }
-            else if (tags.Contains("me"))
-            {
-                textPrefab.alignment = TextAnchor.LowerCenter;
-            }
-            else
-            {
-                textPrefab.alignment = TextAnchor.LowerCenter;
-            }
-     */
-
 }

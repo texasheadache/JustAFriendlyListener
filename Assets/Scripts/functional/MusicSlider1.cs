@@ -15,6 +15,9 @@ public class MusicSlider1 : MonoBehaviour
     //image for slider for dream1
     [SerializeField] GameObject twoMusicSpeed;
 
+    //image for slider for third "song" in scene
+    [SerializeField] GameObject threeMusicSpeed; 
+
     // audiosource of the main music for scene
     [SerializeField] AudioSource mainMusic;
     
@@ -25,12 +28,16 @@ public class MusicSlider1 : MonoBehaviour
     //audiosource for second "song" in scene
     [SerializeField] AudioSource twoMusic;
 
+    //audiosource for third "song" in scene
+    [SerializeField] AudioSource threeMusic; 
+
     // Start is called before the first frame update
     void Start()
     {
         mainMusicSpeed.SetActive(false);
         oneMusicSpeed.SetActive(false);
         twoMusicSpeed.SetActive(false);
+        threeMusicSpeed.SetActive(false);
     }
 
     // Update is called once per frame
@@ -132,6 +139,20 @@ public class MusicSlider1 : MonoBehaviour
                 Debug.Log("dreamOff");
             }
         }
+
+        else if (!threeMusic.mute)
+        {
+            if (!threeMusicSpeed.activeInHierarchy)
+            {
+                threeMusicSpeed.SetActive(true);
+                Debug.Log("threeOn");
+            }
+            else if (threeMusicSpeed.activeInHierarchy)
+            {
+                threeMusicSpeed.SetActive(false);
+                Debug.Log("threeOff");
+            }
+        }
     }
 
     public void closeSlider2()
@@ -146,6 +167,12 @@ public class MusicSlider1 : MonoBehaviour
         {
             twoMusicSpeed.SetActive(false);
             Debug.Log("closeDreamies");
+        }
+
+        else if (threeMusicSpeed.activeInHierarchy)
+        {
+            threeMusicSpeed.SetActive(false);
+            Debug.Log("closeThree");
         }
     }
 

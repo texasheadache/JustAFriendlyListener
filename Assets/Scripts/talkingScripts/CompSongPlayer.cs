@@ -10,7 +10,7 @@ public class CompSongPlayer : MonoBehaviour
     public GameObject talkBox;
     public bool playerInRange;
     public static bool talkOn = false;
-    public InkScript inkScript;
+    public InkScript  inkScript;
     private GameObject[] friends;
     public Animator animator;
 
@@ -38,7 +38,7 @@ public class CompSongPlayer : MonoBehaviour
                     this.GetComponent<FriendlyMovement>().StopForConvo();
                 }
 
-                if(this.GetComponent<FriendlyMovementSideways>() != null)
+                if (this.GetComponent<FriendlyMovementSideways>() != null)
                 {
                     this.GetComponent<FriendlyMovementSideways>().StopForConvo();
                 }
@@ -58,11 +58,11 @@ public class CompSongPlayer : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Space) && inkScript.continuing)
 
             {
-                if(this.GetComponent<FriendlyMovement>() != null)
+                if (this.GetComponent<FriendlyMovement>() != null)
                 {
                     this.GetComponent<FriendlyMovement>().StopForConvo();
                 }
-                if(this.GetComponent<FriendlyMovementSideways>() != null)
+                if (this.GetComponent<FriendlyMovementSideways>() != null)
                 {
                     this.GetComponent<FriendlyMovementSideways>().StopForConvo();
                 }
@@ -76,14 +76,14 @@ public class CompSongPlayer : MonoBehaviour
                 StopFriendsAnim2();
             }
 
-            else 
+            else
             {
-                if(this.GetComponent<FriendlyMovement>() != null)
+                if (this.GetComponent<FriendlyMovement>() != null)
                 {
                     this.GetComponent<FriendlyMovement>().LeaveConvo();
                 }
 
-                if(this.GetComponent<FriendlyMovementSideways>() != null)
+                if (this.GetComponent<FriendlyMovementSideways>() != null)
                 {
                     this.GetComponent<FriendlyMovementSideways>().LeaveConvo();
                 }
@@ -100,7 +100,7 @@ public class CompSongPlayer : MonoBehaviour
                 StartFriendsAnim();
                 StartFriendsAnim2();
                 GameObject.Find("GeneralMusicStuff").GetComponent<MusicSlider1>().closeSlider2();
-              //  GameObject.Find("GeneralMusicStuff").GetComponent<MusicSlider1>().resetSlider2();
+                //  GameObject.Find("GeneralMusicStuff").GetComponent<MusicSlider1>().resetSlider2();
 
             }
         }
@@ -131,14 +131,14 @@ public class CompSongPlayer : MonoBehaviour
     }
 
 
-    
-     
+
+
     private void StopFriends()
     {
-       friends = GameObject.FindGameObjectsWithTag("friendly");
+        friends = GameObject.FindGameObjectsWithTag("friendly");
         foreach (GameObject friends in friends)
         {
-            if(friends.GetComponent<FriendlyMovement>() != null)
+            if (friends.GetComponent<FriendlyMovement>() != null)
             {
                 friends.GetComponent<FriendlyMovement>().StopForConvo();
             }
@@ -150,14 +150,14 @@ public class CompSongPlayer : MonoBehaviour
         friends = GameObject.FindGameObjectsWithTag("friendly");
         foreach (GameObject friends in friends)
         {
-            if(friends.GetComponent<FriendlyMovement>() != null)
+            if (friends.GetComponent<FriendlyMovement>() != null)
             {
                 friends.GetComponent<FriendlyMovement>().LeaveConvo();
             }
         }
     }
 
-    
+
 
 
     private void StopFriendsAnim()
@@ -219,7 +219,7 @@ public class CompSongPlayer : MonoBehaviour
         {
             if (friends.GetComponent<FriendlyMovementSideways>() != null)
             {
-               friends.GetComponent<FriendlyMovementSideways>().StopForConvo();
+                friends.GetComponent<FriendlyMovementSideways>().StopForConvo();
             }
         }
     }
@@ -256,7 +256,7 @@ public class CompSongPlayer : MonoBehaviour
         {
             if (friends.GetComponent<FriendlyMovementSideways2>() != null)
             {
-               friends.GetComponent<FriendlyMovementSideways2>().LeaveConvo();
+                friends.GetComponent<FriendlyMovementSideways2>().LeaveConvo();
             }
         }
     }

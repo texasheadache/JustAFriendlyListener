@@ -4,20 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using Ink.Runtime;
 
-public class WallObject1 : MonoBehaviour
+public class newText : MonoBehaviour
 {
 
     public GameObject talkBox;
     public bool playerInRange;
     public static bool talkOn = false;
-    public InkScript  inkScript;
+    public InkScript2 inkScript;
     private GameObject[] friends;
-
+    public Animator animator;
+    public MusicSlider1 ms1;
 
 
     void Start()
     {
         friends = GameObject.FindGameObjectsWithTag("friendly");
+        animator = GetComponent<Animator>();
     }
 
     // WORKING VERSION OF THIS SCRIPT WITH FINAL FUNCTIONALITY
@@ -28,38 +30,79 @@ public class WallObject1 : MonoBehaviour
         {
             if (talkOn == false)
             {
-                talkBox.GetComponent<InkScript>().ShowPanels();
+                talkBox.GetComponent<InkScript2>().ShowPanels();
+                animator.SetBool("closeEnough", false);
+                animator.SetBool("startedWaving", false);
+                if (this.GetComponent<FriendlyMovement>() != null)
+                {
+                    this.GetComponent<FriendlyMovement>().StopForConvo();
+                }
+
+                if (this.GetComponent<FriendlyMovementSideways>() != null)
+                {
+                    this.GetComponent<FriendlyMovementSideways>().StopForConvo();
+                }
                 talkBox.SetActive(true);
-                talkBox.GetComponent<InkScript>().ShowPanels();
-                talkBox.GetComponent<InkScript>().refreshUI();
+                talkBox.GetComponent<InkScript2>().ShowPanels();
+                talkBox.GetComponent<InkScript2>().refreshUI();
+                this.GetComponent<MusicPlayerFirst>().ChangeMusicToSong();
                 talkOn = true;
-                talkBox.GetComponent<InkScript>().ContinueBool();
-                //StopFriends();
-                //StopFriendsSideways();
-                //StopFriendsSideways2();
+                talkBox.GetComponent<InkScript2>().ContinueBool();
+                StopFriends();
+                StopFriendsSideways();
+                StopFriendsSideways2();
+                StopFriendsAnim();
+                StopFriendsAnim2();
+                ms1.closeSlider();
             }
 
             else if (Input.GetKeyDown(KeyCode.Space) && inkScript.continuing)
 
             {
-                Debug.Log("talkingMore");
-                talkBox.GetComponent<InkScript>().refreshUI();
-                talkBox.GetComponent<InkScript>().ContinueBool();
-                //StopFriendsSideways();
-                //StopFriendsSideways2();
+                if (this.GetComponent<FriendlyMovement>() != null)
+                {
+                    this.GetComponent<FriendlyMovement>().StopForConvo();
+                }
+                if (this.GetComponent<FriendlyMovementSideways>() != null)
+                {
+                    this.GetComponent<FriendlyMovementSideways>().StopForConvo();
+                }
+                animator.SetBool("closeEnough", false);
+                animator.SetBool("startedWaving", false);
+                talkBox.GetComponent<InkScript2>().refreshUI();
+                talkBox.GetComponent<InkScript2>().ContinueBool();
+                StopFriendsSideways();
+                StopFriendsSideways2();
+                StopFriendsAnim();
+                StopFriendsAnim2();
             }
 
             else
             {
-                Debug.Log("ending");
+                if (this.GetComponent<FriendlyMovement>() != null)
+                {
+                    this.GetComponent<FriendlyMovement>().LeaveConvo();
+                }
+
+                if (this.GetComponent<FriendlyMovementSideways>() != null)
+                {
+                    this.GetComponent<FriendlyMovementSideways>().LeaveConvo();
+                }
+
                 talkOn = false;
-                talkBox.GetComponent<InkScript>().eraseUI();
-                talkBox.GetComponent<InkScript>().refreshStory();
-                talkBox.GetComponent<InkScript>().HidePanels();
+                talkBox.GetComponent<InkScript2>().eraseUI();
+                talkBox.GetComponent<InkScript2>().refreshStory();
+                talkBox.GetComponent<InkScript2>().HidePanels();
+                this.GetComponent<MusicPlayerFirst>().ChangeMusicToMain();
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().UnFreeze();
-                //StartFriends();
-                //StartFriendsSideways();
-                //StartFriendsSideways2();
+                StartFriends();
+                StartFriendsSideways();
+                StartFriendsSideways2();
+                StartFriendsAnim();
+                StartFriendsAnim2();
+                GameObject.Find("GeneralMusicStuff").GetComponent<MusicSlider1>().closeSlider2();
+                //  GameObject.Find("GeneralMusicStuff").GetComponent<MusicSlider1>().resetSlider2();
+
             }
         }
     }
@@ -77,19 +120,23 @@ public class WallObject1 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            talkBox.GetComponent<InkScript>().eraseUI();
-            talkBox.GetComponent<InkScript>().refreshStory();
-            talkBox.GetComponent<InkScript>().HidePanels();
-            //StartFriends();
-            //StartFriendsSideways();
-            //StartFriendsSideways2();
+           // talkBox.GetComponent<InkScript2>().eraseUI();
+           // talkBox.GetComponent<InkScript2>().refreshStory();
+           // talkBox.GetComponent<InkScript2>().HidePanels();
+           // this.GetComponent<MusicPlayerFirst>().ChangeMusicToMain();
+           // StartFriends();
+           // StartFriendsSideways();
+           // StartFriendsSideways2();
+
         }
     }
+
+
+
 
     private void StopFriends()
     {
         friends = GameObject.FindGameObjectsWithTag("friendly");
-        Debug.Log("friends");
         foreach (GameObject friends in friends)
         {
             if (friends.GetComponent<FriendlyMovement>() != null)
@@ -102,7 +149,6 @@ public class WallObject1 : MonoBehaviour
     private void StartFriends()
     {
         friends = GameObject.FindGameObjectsWithTag("friendly");
-        Debug.Log("friendsagain");
         foreach (GameObject friends in friends)
         {
             if (friends.GetComponent<FriendlyMovement>() != null)
@@ -113,10 +159,63 @@ public class WallObject1 : MonoBehaviour
     }
 
 
+
+
+    private void StopFriendsAnim()
+    {
+        friends = GameObject.FindGameObjectsWithTag("friendly");
+        foreach (GameObject friends in friends)
+        {
+            if (friends.GetComponent<FriendlyMovementSideways>() != null)
+            {
+                friends.GetComponent<Animator>().enabled = false;
+            }
+        }
+    }
+
+
+
+    private void StartFriendsAnim()
+    {
+        friends = GameObject.FindGameObjectsWithTag("friendly");
+        foreach (GameObject friends in friends)
+        {
+            if (friends.GetComponent<FriendlyMovementSideways>() != null)
+            {
+                friends.GetComponent<Animator>().enabled = true;
+            }
+        }
+    }
+
+    private void StopFriendsAnim2()
+    {
+        friends = GameObject.FindGameObjectsWithTag("friendly");
+        foreach (GameObject friends in friends)
+        {
+            if (friends.GetComponent<FriendlyMovementSideways2>() != null)
+            {
+                friends.GetComponent<Animator>().enabled = false;
+            }
+        }
+    }
+
+
+
+    private void StartFriendsAnim2()
+    {
+        friends = GameObject.FindGameObjectsWithTag("friendly");
+        foreach (GameObject friends in friends)
+        {
+            if (friends.GetComponent<FriendlyMovementSideways2>() != null)
+            {
+                friends.GetComponent<Animator>().enabled = true;
+            }
+        }
+    }
+
     private void StopFriendsSideways()
     {
         friends = GameObject.FindGameObjectsWithTag("friendly");
-        Debug.Log("friends");
         foreach (GameObject friends in friends)
         {
             if (friends.GetComponent<FriendlyMovementSideways>() != null)
@@ -129,12 +228,12 @@ public class WallObject1 : MonoBehaviour
     private void StartFriendsSideways()
     {
         friends = GameObject.FindGameObjectsWithTag("friendly");
-        Debug.Log("friendsagain");
         foreach (GameObject friends in friends)
         {
             if (friends.GetComponent<FriendlyMovementSideways>() != null)
             {
                 friends.GetComponent<FriendlyMovementSideways>().LeaveConvo();
+
             }
         }
     }
@@ -142,7 +241,6 @@ public class WallObject1 : MonoBehaviour
     private void StopFriendsSideways2()
     {
         friends = GameObject.FindGameObjectsWithTag("friendly");
-        Debug.Log("friends");
         foreach (GameObject friends in friends)
         {
             if (friends.GetComponent<FriendlyMovementSideways2>() != null)
@@ -155,7 +253,6 @@ public class WallObject1 : MonoBehaviour
     private void StartFriendsSideways2()
     {
         friends = GameObject.FindGameObjectsWithTag("friendly");
-        Debug.Log("friendsagain");
         foreach (GameObject friends in friends)
         {
             if (friends.GetComponent<FriendlyMovementSideways2>() != null)

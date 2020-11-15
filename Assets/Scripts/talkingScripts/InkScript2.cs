@@ -13,11 +13,12 @@ public class InkScript2 : MonoBehaviour
     public GameObject buttonPanel;
     public TextAsset inkJSON;
     public Story story;
-    public Text textPrefab;
+   // public Text textPrefab;
     public Button buttonPrefab;
     List<string> tags;
     public bool continuing = false;
     private EventSystem es;
+    public Text textPanel; 
 
 
     // Start is called before the first frame update
@@ -48,15 +49,14 @@ public class InkScript2 : MonoBehaviour
 
         if (story.canContinue == true)
         {
-            Text storyText = Instantiate(textPrefab) as Text;
+          //  Text storyText = Instantiate(textPrefab) as Text;
 
             string text = loadStoryChunk();
 
             List<string> tags = story.currentTags;
 
-            storyText.text = text;
-            storyText.transform.SetParent(dialogPanel.transform, true);
-            storyText.transform.SetAsFirstSibling();
+            textPanel.text = text;
+         
 
             foreach (Choice choice in story.currentChoices)
             {
@@ -86,8 +86,11 @@ public class InkScript2 : MonoBehaviour
     }
 
 
+
     public void eraseUI()
     {
+        textPanel.text = "";
+        /*
         if (dialogPanel.transform.childCount > 0)
         {
             for (int i = 0; i < dialogPanel.transform.childCount; i++)
@@ -99,7 +102,8 @@ public class InkScript2 : MonoBehaviour
                 }
             }
         }
-
+        */
+        /*
         if (buttonPanel.transform.childCount > 0)
         {
             for (int i = 0; i < buttonPanel.transform.childCount; i++)
@@ -107,6 +111,7 @@ public class InkScript2 : MonoBehaviour
                 Destroy(buttonPanel.transform.GetChild(i).gameObject);
             }
         }
+        */
     }
 
 

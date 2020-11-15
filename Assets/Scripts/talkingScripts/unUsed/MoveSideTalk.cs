@@ -12,7 +12,7 @@ public class MoveSideTalk : MonoBehaviour
     [SerializeField] AudioSource playMusic;
     [SerializeField] AudioSource playCompSong1;
     public bool talkOn = false;
-    public InkScript inkScript;
+    public InkScript  inkScript;
     private GameObject[] friends;
 
 
@@ -32,7 +32,7 @@ public class MoveSideTalk : MonoBehaviour
             {
                 talkBox.GetComponent<InkScript>().ShowPanels();
 
-               // this.GetComponent<FriendlyMovement>().StopForConvo();
+                // this.GetComponent<FriendlyMovement>().StopForConvo();
                 this.GetComponent<FriendlyMovementSideways>().StopForConvo();
                 Debug.Log("talking");
                 talkBox.SetActive(true);
@@ -41,14 +41,14 @@ public class MoveSideTalk : MonoBehaviour
                 ChangeMusicToSong();
                 talkOn = true;
                 talkBox.GetComponent<InkScript>().ContinueBool();
-              //  StopFriends();
-               // StopFriendsSideways();
+                //  StopFriends();
+                // StopFriendsSideways();
             }
 
             else if (Input.GetKeyDown(KeyCode.Space) && inkScript.continuing)
 
             {
-              //  this.GetComponent<FriendlyMovement>().StopForConvo();
+                //  this.GetComponent<FriendlyMovement>().StopForConvo();
                 this.GetComponent<FriendlyMovementSideways>().StopForConvo();
 
                 Debug.Log("talkingMore");
@@ -59,8 +59,8 @@ public class MoveSideTalk : MonoBehaviour
 
             else
             {
-              //  this.GetComponent<FriendlyMovement>().LeaveConvo();
-                 this.GetComponent<FriendlyMovementSideways>().LeaveConvo();
+                //  this.GetComponent<FriendlyMovement>().LeaveConvo();
+                this.GetComponent<FriendlyMovementSideways>().LeaveConvo();
 
                 Debug.Log("ending");
                 talkOn = false;
@@ -69,7 +69,7 @@ public class MoveSideTalk : MonoBehaviour
                 talkBox.GetComponent<InkScript>().HidePanels();
                 ChangeMusicToMain();
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().UnFreeze();
-               // StartFriends();
+                // StartFriends();
                 //   StartFriendsSideways();
             }
         }
@@ -92,7 +92,7 @@ public class MoveSideTalk : MonoBehaviour
             talkBox.GetComponent<InkScript>().refreshStory();
             talkBox.GetComponent<InkScript>().HidePanels();
             ChangeMusicToMain();
-          //  StartFriends();
+            //  StartFriends();
             //  StartFriendsSideways();
         }
     }

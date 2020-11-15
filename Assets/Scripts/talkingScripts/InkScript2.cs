@@ -90,28 +90,7 @@ public class InkScript2 : MonoBehaviour
     public void eraseUI()
     {
         textPanel.text = "";
-        /*
-        if (dialogPanel.transform.childCount > 0)
-        {
-            for (int i = 0; i < dialogPanel.transform.childCount; i++)
-            {
-                GameObject obj = dialogPanel.transform.GetChild(i).gameObject;
-                if (obj.GetComponent<Text>() != null)
-                {
-                    Destroy(dialogPanel.transform.GetChild(i).gameObject);
-                }
-            }
-        }
-        */
-        /*
-        if (buttonPanel.transform.childCount > 0)
-        {
-            for (int i = 0; i < buttonPanel.transform.childCount; i++)
-            {
-                Destroy(buttonPanel.transform.GetChild(i).gameObject);
-            }
-        }
-        */
+  
     }
 
 

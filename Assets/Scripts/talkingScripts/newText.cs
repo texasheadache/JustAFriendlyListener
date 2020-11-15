@@ -119,6 +119,7 @@ public class newText : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("leftConvo");
             playerInRange = false;
            // talkBox.GetComponent<InkScript2>().eraseUI();
            // talkBox.GetComponent<InkScript2>().refreshStory();

@@ -27,7 +27,7 @@ public class InkScript2 : MonoBehaviour
         story = new Story(inkJSON.text);
         // refreshUI();
         dialogPanel = this.transform.GetChild(0).gameObject;
-        buttonPanel = dialogPanel.transform.GetChild(0).gameObject;
+        buttonPanel = dialogPanel.transform.GetChild(1).gameObject;
         dialogPanel.SetActive(false);
         es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
     }
@@ -60,6 +60,7 @@ public class InkScript2 : MonoBehaviour
 
             foreach (Choice choice in story.currentChoices)
             {
+                Debug.Log("moreChoices");
                 Button choiceButton = Instantiate(buttonPrefab) as Button;
                 Text choiceText = choiceButton.GetComponentInChildren<Text>();
                 choiceText.text = choice.text;
@@ -90,7 +91,14 @@ public class InkScript2 : MonoBehaviour
     public void eraseUI()
     {
         textPanel.text = "";
-  
+
+        if (buttonPanel.transform.childCount > 0)
+        {
+            for (int i = 0; i < buttonPanel.transform.childCount; i++)
+            {
+                Destroy(buttonPanel.transform.GetChild(i).gameObject);
+            }
+        }
     }
 
 
